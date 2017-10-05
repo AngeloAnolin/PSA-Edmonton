@@ -1,8 +1,8 @@
 {
-  "name": "vue-admin-paper-dashboard",
+  "name": "psa-tim",
   "version": "1.0.0",
-  "description": "A sample admin dashboard based on paper dashboard UI template",
-  "author": "cristian.jora <cristian.jora@corebuild.eu>",
+  "description": "PSA Edmonton Basketball Website",
+  "author": "Angelo Anolin (angelo.anolin@gmail.com)",
   "private": true,
   "scripts": {
     "dev": "cross-env ENABLE_ESLINT=true node build/dev-server.js",
