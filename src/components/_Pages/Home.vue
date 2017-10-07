@@ -75,51 +75,16 @@
             The latest news and info about the league
           </p>
 
-          <div class="col-md-4 col-sm-12">
+          <div class="col-md-4 col-sm-12" v-for="hn in homeNews" :key="hn.id">
             <div class="alert alert-success" data-notify="container">
-              <!-- <span data-notify="icon" class="ti-pie-chart"></span> -->
-              <h4>Open Gym on October 1, 2017</h4>
-              <p><small>Posted on Sept. 29, 2017</small></p>
+              <h4>{{ hn.title }}</h4>
+              <p><small>Posted on {{ hn.postDate}}</small></p>
               <span data-notify="message">
-                In preparation for the upcoming PSA 2017 Fall/Winter Season, PSA is providing open gym access for all teams and players, 
-                as well as those individuals who wants to participate in the league.
+                {{ hn.blurb }}
               </span>
               
               <div class="text-right">
-                <router-link class="btn btn-info" :to="{path:'/news?article=open-gym-oct-1'}">More...</router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-12">
-            <div class="alert alert-success" data-notify="container">
-              <!-- <span data-notify="icon" class="ti-pie-chart"></span> -->
-              <h4>PSA Official Facebook Page</h4>
-              <p><small>Posted on Sept. 26, 2017</small></p>
-              <span data-notify="message">
-                In line with the recent elections of new association officials, the Philippine Sports Association is proud to announce 
-                the new and official Facebook page for the organization.
-              </span>
-              
-              <div class="text-right">
-                <router-link class="btn btn-info" :to="{path:'/news?article=official-facebook'}">More...</router-link>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-12">
-            <div class="alert alert-success" data-notify="container">
-              <!-- <span data-notify="icon" class="ti-pie-chart"></span> -->
-              <h4>New PSA Officials</h4>
-              <p><small>Posted on Aug. 1, 2017</small></p>
-              <span data-notify="message">
-                To continue with the growth and purpose of providing the best Filipino basketball league in Edmonton, 
-                the Philippine Sports Association held a meeting last July 2, 2017 to elect the new set of officers 
-                to manage the association.
-              </span>
-              
-              <div class="text-right">
-                <router-link class="btn btn-info" :to="{path:'/news?article=new-psa-officials'}">More...</router-link>
+                <router-link class="btn btn-info" :to="'' + hn.link">More...</router-link>
               </div>
             </div>
           </div>
@@ -179,7 +144,13 @@
         divSlide3: 'slide-3',
         slidesCount: 3,
         currentSlide: 1,
-        slide1Active: false
+        slide1Active: false,
+        homeNews: [
+          { id: 4, title: 'Open Gym on October 8, 2017', postDate: 'Oct. 5, 2017', blurb: 'To further prepare players for the upcoming fall/winter league, PSA is again holding another open gym session.', link: '/news?article=open-gym-oct-8' },
+          { id: 3, title: 'Open Gym on October 1, 2017', postDate: 'Sept. 29, 2017', blurb: 'In preparation for the upcoming PSA 2017 Fall/Winter Season, PSA is providing open gym access for all teams and players, as well as those individuals who wants to participate in the league.', link: '/news?article=open-gym-oct-1' },
+          { id: 2, title: 'PSA Official Facebook Page', postDate: 'Sept. 26, 2017', blurb: 'In line with the recent elections of new association officials, the Philippine Sports Association is proud to announce the new and official Facebook page for the organization.', link: '/news?article=official-facebook' },
+          { id: 1, title: 'New PSA Officials', postDate: 'Aug. 1, 2017', blurb: 'To continue with the growth and purpose of providing the best Filipino basketball league in Edmonton, the Philippine Sports Association held a meeting last July 2, 2017 to elect the new set of officers to manage the association.', link: '/news?article=new-psa-officials' }
+        ]
       }
     },
 

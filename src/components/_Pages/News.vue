@@ -2,12 +2,11 @@
   <div>
     <div class="row">
       <!-- Open Gym -->
-      <div class="container" id="open-gym-oct-1">
-        <h2>Open Gym - October 1, 2017</h2>
-        <p class="news-post-meta">September 29, 2017 by Angelo</p>
+      <div class="container" id="open-gym-oct-8">
+        <h2>Open Gym - October 8, 2017</h2>
+        <p class="news-post-meta">October 5, 2017 by Angelo</p>
         <p>
-          In preparation for the upcoming PSA 2017 Fall/Winter Season, PSA is providing open gym access for all
-          teams and players, as well as those individuals who wants to participate in the league.
+          To further prepare players for the upcoming fall/winter league, PSA is again holding another open gym session.
         </p>
         <p>
           Upcoming open gym will be held at Trinity High School located at <a href="https://goo.gl/maps/jTSggnJWWeQ2" target="_blank">
@@ -18,6 +17,24 @@
           <div class="container-fluid">
             <google-map name="trinity" latitude="53.457866" longitude="-113.441989" mapTitle="Trinity High School"></google-map>
           </div>
+        </p>
+        <p>
+          Tell your basketball friends and colleagues to come, participate and play. See you at the open gym on Saturday!
+        </p>
+      </div>
+
+      <!-- Open Gym -->
+      <div class="container" id="open-gym-oct-1">
+        <h2>Open Gym - October 1, 2017</h2>
+        <p class="news-post-meta">September 29, 2017 by Angelo</p>
+        <p>
+          In preparation for the upcoming PSA 2017 Fall/Winter Season, PSA is providing open gym access for all
+          teams and players, as well as those individuals who wants to participate in the league.
+        </p>
+        <p>
+          Upcoming open gym will be held at Trinity High School located at <a href="https://goo.gl/maps/jTSggnJWWeQ2" target="_blank">
+          7007 28 AVE, Edmonton, AB T6K 4A5 </a> and is 
+          open from 9AM - 12PM.
         </p>
         <p>
           Tell your basketball friends and colleagues to come and play. See you at the open gym on Sunday!
