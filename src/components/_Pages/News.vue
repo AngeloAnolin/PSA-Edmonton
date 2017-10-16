@@ -1,6 +1,28 @@
 <template>
   <div>
     <div class="row">
+      <!-- League Opening -->
+      <div class="container" id="fall-winter-2017-start">
+        <h2>PSA Fall / Winter 2017 Season Starts</h2>
+        <p class="news-post-meta">October 13, 2017 by Angelo</p>
+        <p>
+          Excitement builds up as PSA-Edmonton ushers to its 21st season. With a lot of teams participating in different division, 
+          everything is in line for the premiere basketball leageu for Filipinos in Edmonton and surrounding areas.
+        </p>
+        <p>
+         More than 40 teams have registered for this season, all aiming to compete and win the championship in their respective
+         division.
+        </p>
+        <p>
+          Inaugural games will be held at Father Michael Troy Catholic Junior High School Gym, located at 3630 23 St NW, Edmonton, AB T6T 1W7.
+          With eight games slated on the opening day, and followed by 12 games the following day, this weekend is big for Filipino basketball
+          fanatics who are participants and spectator of the sports.
+        </p>
+        <p>
+          PSA-Edmonton invites all basketball afficionados to come and watch the games every weekend held at different school gyms within the city.
+        </p>
+      </div>
+
       <!-- Open Gym -->
       <div class="container" id="open-gym-oct-8">
         <h2>Open Gym - October 8, 2017</h2>
@@ -11,11 +33,12 @@
         <p>
           Upcoming open gym will be held at Trinity High School located at <a href="https://goo.gl/maps/jTSggnJWWeQ2" target="_blank">
           7007 28 AVE, Edmonton, AB T6K 4A5 </a> and is 
-          open from 9AM - 12PM. Location of the school is shown below:
+          open from 9AM - 12PM. Click on the link below to open in Google Maps:
         </p>
         <p>
           <div class="container-fluid">
-            <google-map name="trinity" latitude="53.457866" longitude="-113.441989" mapTitle="Trinity High School"></google-map>
+            <a class="btn btn-primary" href="https://goo.gl/maps/fKvJ9YpMD492" target="_blank">Click Here to Open Map</a>
+            <!-- <google-map name="trinity" latitude="53.457866" longitude="-113.441989" mapTitle="Trinity High School"></google-map> -->
           </div>
         </p>
         <p>

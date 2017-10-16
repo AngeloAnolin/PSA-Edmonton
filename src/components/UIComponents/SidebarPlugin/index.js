@@ -14,6 +14,11 @@ const SidebarStore = {
       path: '/news'
     },
     {
+      name: 'Teams',
+      icon: 'fa fa-users',
+      path: '/teams'
+    },
+    {
       name: 'Sponsors',
       icon: 'fa fa-briefcase',
       path: '/sponsors'

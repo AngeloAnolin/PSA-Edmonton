@@ -6,6 +6,7 @@ import Layout from '../components/_Layout/Layout.vue'
 // Pages
 import Home from 'components/_Pages/Home.vue'
 import News from 'components/_Pages/News.vue'
+import Teams from 'components/_Pages/Teams.vue'
 import Sponsors from 'components/_Pages/Sponsors.vue'
 import Schedules from 'components/_Pages/Schedules.vue'
 import Gallery from 'components/_Pages/Gallery.vue'
@@ -38,6 +39,11 @@ const routes = [
         path: 'news',
         name: 'news',
         component: News
+      },
+      {
+        path: 'teams',
+        name: 'teams',
+        component: Teams
       },
       {
         path: 'sponsors',

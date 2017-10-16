@@ -5,8 +5,8 @@
         <h2>A Brief History</h2>
         <p>
           <strong>Philippine Sports Association - Edmonton</strong> was founded on the summer of 1996
-          through the initiative of the founding members, Gary Perpetua, Celso "Jun" Antonio and James Bond
-          with the main objective of bringing the Filipino community in Edmonton together through the 
+          through the initiative of the founding members, Gary Perpetua and Celso "Jun" Antonio with 
+          the main objective of bringing the Filipino community in Edmonton together through the 
           game of basketball. It is the intent of the founding members to provide an avenue for their
           fellow kababayan, an avenue to play the sports of basketball in a fun and competitive environment.
         </p>
@@ -31,10 +31,10 @@
         </p>
         <br />
         <p>
-          Basketball tournaments are generally held twice a year, with the first conference aptly named "Fall/Winter" league 
-          running from October until January. After the first conference, PSA Edmonton takes a short break to allow players to 
-          rest and recuperate and enjoy some winter time. The second conference named "Winter/Spring" league begins around 
-          March and is held until June.
+          Basketball tournaments are generally held twice a year, with the first season aptly named "Fall/Winter" league 
+          running from October until January. After the first season, PSA Edmonton takes a short break to allow players to 
+          rest and recuperate and enjoy some winter time. The second season called "Winter/Spring" league begins around 
+          March and generally runs until June.
         </p>
         <br />
         <p>
@@ -57,7 +57,7 @@
 
       <div class="container" id="psa-officials">
         <h2>Current Officials</h2>
-        <div class="col-md-3 col-sm-6 col-xs-12" v-for="o in officials" :key="o.name">
+        <div class="col-md-4 col-sm-12" v-for="o in officials" :key="o.name">
           <official-card :image-file="o.image" :official-name="o.name" :position="o.position" :contact-phone="o.phone">
           </official-card>
         </div>
@@ -78,23 +78,22 @@
     data () {
       return {
         officials: [
-          { name: 'Gary Perpetua', position: 'President', image: 'man.png', phone: '###-###-####' },
+          { name: 'Gary Perpetua', position: 'President', image: 'gary.jpg', phone: '###-###-####' },
           { name: 'Celso \'Jun\' Antonio', position: 'Vice-President (Internal)', image: 'man.png', phone: '###-###-####' },
-          { name: 'Jovencio Datu', position: 'Vice-President (External)', image: 'man.png', phone: '###-###-####' },
+          { name: 'Jovencio Datu', position: 'Vice-President (External)', image: 'joven.jpg', phone: '###-###-####' },
           { name: 'Ariel Nealega', position: 'Secretary', image: 'man.png', phone: '###-###-####' },
           { name: 'Beth Datu', position: 'Treasurer', image: 'woman.png', phone: '###-###-####' },
-          { name: 'Charmaine Keillor', position: 'Co-Treasurer', image: 'woman.png', phone: '###-###-####' },
-          { name: 'Helary Perpetua', position: 'Co-Treasurer', image: 'woman.png', phone: '###-###-####' },
-          { name: 'Andy Mar \'Floyd\' Eyao', position: 'Public Relations Officer', image: 'man.png', phone: '###-###-####' },
-          { name: 'Allan Angeles', position: 'Public Relations Officer', image: 'man.png', phone: '###-###-####' },
+          { name: 'Charmaine Keillor', position: 'Co-Treasurer', image: 'charmaine.jpg', phone: '###-###-####' },
+          { name: 'Helary Perpetua', position: 'Co-Treasurer', image: 'helary.jpg', phone: '###-###-####' },
+          { name: 'Andy Mar \'Floyd\' Eyao', position: 'Public Relations Officer', image: 'floyd.jpg', phone: '###-###-####' },
           { name: 'Joe Simon', position: 'Public Relations Officer', image: 'man.png', phone: '###-###-####' },
-          { name: 'Yros Astorga', position: 'Public Relations Officer', image: 'man.png', phone: '###-###-####' },
+          { name: 'Yros Astorga', position: 'Public Relations Officer', image: 'yros.jpg', phone: '###-###-####' },
           { name: 'Michael Gonzales', position: 'Sergeant-At-Arms', image: 'man.png', phone: '###-###-####' },
-          { name: 'Francis Liwanag', position: 'Sergeant-At-Arms', image: 'man.png', phone: '###-###-####' },
-          { name: 'Anton Flores', position: 'Sergeant-At-Arms', image: 'man.png', phone: '###-###-####' },
-          { name: 'Joel Vitales', position: 'Sergeant-At-Arms', image: 'man.png', phone: '###-###-####' },
-          { name: 'Angelo Anolin', position: 'Web Developer', image: 'man.png', phone: '###-###-####' },
-          { name: 'Gerald Perpetua', position: 'Social Media Coordinator', image: 'man.png', phone: '###-###-####' },
+          { name: 'Francis Liwanag', position: 'Sergeant-At-Arms', image: 'francis.jpg', phone: '###-###-####' },
+          { name: 'Anton Flores', position: 'Sergeant-At-Arms', image: 'anton.jpg', phone: '###-###-####' },
+          { name: 'Joel Vitales', position: 'Sergeant-At-Arms', image: 'joel.jpg', phone: '###-###-####' },
+          { name: 'Angelo Anolin', position: 'Web Developer', image: 'angelo.jpg', phone: '###-###-####' },
+          { name: 'Gerald Perpetua', position: 'Social Media Coordinator', image: 'gerald.jpg', phone: '###-###-####' },
           { name: 'Lito Velasco', position: 'Adviser', image: 'man.png', phone: '###-###-####' }
         ]
       }

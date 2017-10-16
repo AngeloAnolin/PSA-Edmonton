@@ -9,7 +9,7 @@
     <div class="content table-responsive table-full-width">
       <table class="table" :class="tableClass">
         <thead>
-          <th v-for="c in columns" :key="c.columnName">{{ c.columnTitle }}</th>
+          <th v-for="c in columns" :key="c.columnName" :width="c.columnWidth">{{ c.columnTitle }}</th>
         </thead>
         <tbody>
           <tr v-for="item in data" :key="item.id">
