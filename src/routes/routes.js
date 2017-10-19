@@ -11,18 +11,19 @@ import Sponsors from 'components/_Pages/Sponsors.vue'
 import Schedules from 'components/_Pages/Schedules.vue'
 import Gallery from 'components/_Pages/Gallery.vue'
 import About from 'components/_Pages/About.vue'
+import Admin from 'components/_Pages/Admin.vue'
 
 // GeneralViews
 import NotFound from '../components/GeneralViews/NotFoundPage.vue'
 
 // Admin pages
-import Overview from 'src/components/Dashboard/Views/Overview.vue'
-import UserProfile from 'src/components/Dashboard/Views/UserProfile.vue'
-import Notifications from 'src/components/Dashboard/Views/Notifications.vue'
-import Icons from 'src/components/Dashboard/Views/Icons.vue'
-import Maps from 'src/components/Dashboard/Views/Maps.vue'
-import Typography from 'src/components/Dashboard/Views/Typography.vue'
-import TableList from 'src/components/Dashboard/Views/TableList.vue'
+// import Overview from 'src/components/Dashboard/Views/Overview.vue'
+// import UserProfile from 'src/components/Dashboard/Views/UserProfile.vue'
+// import Notifications from 'src/components/Dashboard/Views/Notifications.vue'
+// import Icons from 'src/components/Dashboard/Views/Icons.vue'
+// import Maps from 'src/components/Dashboard/Views/Maps.vue'
+// import Typography from 'src/components/Dashboard/Views/Typography.vue'
+// import TableList from 'src/components/Dashboard/Views/TableList.vue'
 
 const routes = [
   {
@@ -64,51 +65,56 @@ const routes = [
         path: 'about',
         name: 'about',
         component: About
+      },
+      {
+        path: 'admin-psa',
+        name: 'admin',
+        component: Admin
       }
     ]
   },
-  {
-    path: '/admin',
-    component: Layout,
-    redirect: '/admin/stats',
-    children: [
-      {
-        path: 'overview',
-        name: 'overview',
-        component: Overview
-      },
-      {
-        path: 'stats',
-        name: 'stats',
-        component: UserProfile
-      },
-      {
-        path: 'notifications',
-        name: 'notifications',
-        component: Notifications
-      },
-      {
-        path: 'icons',
-        name: 'icons',
-        component: Icons
-      },
-      {
-        path: 'maps',
-        name: 'maps',
-        component: Maps
-      },
-      {
-        path: 'typography',
-        name: 'typography',
-        component: Typography
-      },
-      {
-        path: 'table-list',
-        name: 'table-list',
-        component: TableList
-      }
-    ]
-  },
+  // {
+  //   path: '/admin',
+  //   component: Layout,
+  //   redirect: '/admin/stats',
+  //   children: [
+  //     {
+  //       path: 'overview',
+  //       name: 'overview',
+  //       component: Overview
+  //     },
+  //     {
+  //       path: 'stats',
+  //       name: 'stats',
+  //       component: UserProfile
+  //     },
+  //     {
+  //       path: 'notifications',
+  //       name: 'notifications',
+  //       component: Notifications
+  //     },
+  //     {
+  //       path: 'icons',
+  //       name: 'icons',
+  //       component: Icons
+  //     },
+  //     {
+  //       path: 'maps',
+  //       name: 'maps',
+  //       component: Maps
+  //     },
+  //     {
+  //       path: 'typography',
+  //       name: 'typography',
+  //       component: Typography
+  //     },
+  //     {
+  //       path: 'table-list',
+  //       name: 'table-list',
+  //       component: TableList
+  //     }
+  //   ]
+  // },
   { path: '*', component: NotFound }
 ]
 

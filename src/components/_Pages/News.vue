@@ -1,6 +1,59 @@
 <template>
   <div>
     <div class="row">
+      <!-- Week 2 Game Posted -->
+      <div class="container" id="week-2-games">
+        <h2>Week 2 Games Posted  (For Oct 21 & 22, 2017)</h2>
+        <p class="news-post-meta">October 17, 2017 by Angelo</p>
+        <p>
+          Games for the upcoming weekend, October 21 & 22 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          A total of 23 games are scheduled to be played across different school gym locations in the city.
+        </p>
+        <p>
+          Looking forward to seeing you all there.
+        </p>
+      </div>
+
+      <!-- Plaer of The Week 1 -->
+      <div class="container" id="player-of-the-week-1">
+        <h2>Player of the Week (Oct 14&15, 2017)</h2>
+        <p class="news-post-meta">October 16, 2017 by Angelo</p>
+        <p>
+          Nico Yola of Akatsuki performed an exciting performance in their first game last Saturday against Eswar leading the team with 55 points.
+        </p>
+        <p>
+          This is the highest scoring output performed by a player this season, earning Yola the honors of being named Player of the Week.
+        </p>
+      </div>
+      <!-- Successful League Start -->
+      <div class="container" id="league-opening-weekend-2017">
+        <h2>Successful League Opening Weekend</h2>
+        <p class="news-post-meta">October 16, 2017 by Angelo</p>
+        <p>
+          PSA-Edmonton ushered to its 21st season with a bang featuring 22 games over the weekend across different school gym locations in the city.
+        </p>
+        <p>
+          Saturday fielded a total of 16 teams playing in the Father Troy gym.
+        </p>
+        <p>
+          On Sunday, there were two locations where a total of 14 games (7 for each location) were played simultaneously. Games were played in Oscar Romero gym
+          and Holy Trinity gym.
+        </p>
+        <p>
+          Most of the players showed a lot of excitement and eagerness in participating for this year's tournament. A lot teams have introduced new players 
+          and a lot of new faces in the Edmonton's Filipino basketball community were seen.
+        </p>
+        <p>
+          PSA-Edmonton would like to thank all the teams, participants, players, spectators and sponsors for making the start of the premiere Filipino Basketball 
+          league in Edmonton a rousing success.
+        </p>
+      </div>
+
       <!-- League Opening -->
       <div class="container" id="fall-winter-2017-start">
         <h2>PSA Fall / Winter 2017 Season Starts</h2>

@@ -67,6 +67,7 @@
       <hr />
 
       <div class="content">
+        <!-- News -->
         <div class="container-fluid">
           <h3>
             What's Happening
@@ -101,7 +102,7 @@
             Games schedule this coming weekend
           </p>
 
-          <div class="container-fluid">
+          <div class="row" v-if="false">
             <div class="alert alert-danger">
               <span>
                 Schedules will be posted as soon as they are available...
@@ -109,14 +110,17 @@
             </div>
           </div>
 
-          <div class="container-fluid" v-if="false">
-            <h4>Saturday, October 14, 2017 @ Father Troy</h4>
+          <div class="row">
+            <h4>Saturday, October 21, 2017 @ Father Troy</h4>
             <div class="col-md-4 col-sm-12" v-for="u in upcomingSatGames" :key="u.id">
               <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
                 <div class="content">
                   <div class="row">
                     <div class="col-xs-4">
-                      <div class="icon-big text-center icon-warning"><i class="fa fa-dribbble"></i></div>
+                      <div class="icon-big text-center icon-danger"><i class="fa fa-dribbble"></i></div>
                     </div>
                     <div class="col-xs-8">
                       <h5>{{ u.homeTeam }}</h5>
@@ -136,14 +140,17 @@
             </div>
           </div>
 
-          <div class="container-fluid" v-if="false">
+          <div class="row">
             <h4>Sunday, October 15, 2017 @ Oscar Romero</h4>
             <div class="col-md-4 col-sm-12" v-for="u in upcomingSunGames1" :key="u.id">
               <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
                 <div class="content">
                   <div class="row">
                     <div class="col-xs-4">
-                      <div class="icon-big text-center icon-warning"><i class="fa fa-dribbble"></i></div>
+                      <div class="icon-big text-center icon-danger"><i class="fa fa-dribbble"></i></div>
                     </div>
                     <div class="col-xs-8">
                       <h5>{{ u.homeTeam }}</h5>
@@ -163,14 +170,17 @@
             </div>
           </div>
 
-          <div class="container-fluid" v-if="false">
+          <div class="row">
             <h4>Sunday, October 15, 2017 @ Holy Trinity</h4>
             <div class="col-md-4 col-sm-12" v-for="u in upcomingSunGames2" :key="u.id">
               <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
                 <div class="content">
                   <div class="row">
                     <div class="col-xs-4">
-                      <div class="icon-big text-center icon-warning"><i class="fa fa-dribbble"></i></div>
+                      <div class="icon-big text-center icon-danger"><i class="fa fa-dribbble"></i></div>
                     </div>
                     <div class="col-xs-8">
                       <h5>{{ u.homeTeam }}</h5>
@@ -207,10 +217,93 @@
             <h4>Saturday, October 14, 2017 @ Father Troy</h4>
             <div class="col-md-4 col-sm-12" v-for="u in satGameResults" :key="u.id">
               <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
                 <div class="content">
                   <div class="row">
                     <div class="col-xs-4">
-                      <div class="icon-big text-center icon-warning"><i class="fa fa-dribbble"></i></div>
+                      <div class="icon-big text-center icon-success"><i class="fa fa-dribbble"></i></div>
+                    </div>
+                    <div class="col-xs-8">
+                      <h5>
+                        {{ u.homeTeam }} - {{ u.homeTeamScore }}
+                        <span v-if="u.homeTeamWin">(W)</span>
+                        <span v-if="u.awayTeamWin">(L)</span>
+                      </h5>
+                      vs
+                      <h5>
+                        {{ u.awayTeam }} - {{ u.awayTeamScore }}
+                        <span v-if="u.awayTeamWin">(W)</span>
+                        <span v-if="u.homeTeamWin">(L)</span>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer text-right">
+                  <hr> 
+                  <div class="stats">
+                    {{ u.gameNotes }}
+                    &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="container-fluid">
+            <h4>Sunday, October 15, 2017 @ Oscar Romero</h4>
+            <div class="col-md-4 col-sm-12" v-for="u in sunGameResults1" :key="u.id">
+              <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <div class="icon-big text-center icon-success"><i class="fa fa-dribbble"></i></div>
+                    </div>
+                    <div class="col-xs-8">
+                      <h5>
+                        {{ u.homeTeam }} - {{ u.homeTeamScore }}
+                        <span v-if="u.homeTeamWin">(W)</span>
+                        <span v-if="u.awayTeamWin">(L)</span>
+                      </h5>
+                      vs
+                      <h5>
+                        {{ u.awayTeam }} - {{ u.awayTeamScore }}
+                        <span v-if="u.awayTeamWin">(W)</span>
+                        <span v-if="u.homeTeamWin">(L)</span>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer text-right">
+                  <hr> 
+                  <div class="stats">
+                    {{ u.gameNotes }}
+                    &nbsp; &nbsp;
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="container-fluid">
+            <h4>Sunday, October 15, 2017 @ Trinity</h4>
+            <div class="col-md-4 col-sm-12" v-for="u in sunGameResults2" :key="u.id">
+              <div class="card">
+                <div class="header">
+                  {{ u.division }}
+                </div>
+                <div class="content">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <div class="icon-big text-center icon-success"><i class="fa fa-dribbble"></i></div>
                     </div>
                     <div class="col-xs-8">
                       <h5>
@@ -264,15 +357,14 @@
         currentSlide: 1,
         slide1Active: false,
         homeNews: [
-          { id: 5, title: 'League Starts October 14, 2017', postDate: 'Oct. 13, 2017', blurb: 'Excitement builds up as PSA-Edmonton ushers to its 21st season. With a lot of teams participating in different division, everything is in line for the premiere basketball...', link: '/news?article=fall-winter-2017-start' },
-          { id: 4, title: 'Open Gym on October 8, 2017', postDate: 'Oct. 5, 2017', blurb: 'To further prepare players for the upcoming fall/winter league, PSA is again holding another open gym session.', link: '/news?article=open-gym-oct-8' },
-          { id: 3, title: 'Open Gym on October 1, 2017', postDate: 'Sept. 29, 2017', blurb: 'In preparation for the upcoming PSA 2017 Fall/Winter Season, PSA is providing open gym access for all teams and players, as well as those individuals who wants to participate in the league.', link: '/news?article=open-gym-oct-1' },
-          { id: 2, title: 'PSA Official Facebook Page', postDate: 'Sept. 26, 2017', blurb: 'In line with the recent elections of new association officials, the Philippine Sports Association is proud to announce the new and official Facebook page for the organization.', link: '/news?article=official-facebook' },
-          { id: 1, title: 'New PSA Officials', postDate: 'Aug. 1, 2017', blurb: 'To continue with the growth and purpose of providing the best Filipino basketball league in Edmonton, the Philippine Sports Association held a meeting last July 2, 2017 to elect the new set of officers to manage the association.', link: '/news?article=new-psa-officials' }
+          { id: 8, title: 'Week 2 Games Posted', postDate: 'Oct. 17, 2017', blurb: 'Second week schedules for the PSA-Edmonton basketball league has been posted.', link: '/news?article=week-2-games' },
+          { id: 7, title: 'Player Of The Week (Oct. 14&15, 2017)', postDate: 'Oct. 16, 2017', blurb: 'Player of the week in PSA-Edmonton\'s inaugural week goes to Akatsuki\'s Nico Yola...', link: '/news?article=player-of-the-week-1' },
+          { id: 6, title: 'Successful League Opening Weekend', postDate: 'Oct. 16, 2017', blurb: 'PSA-Edmonton started the Fall/Winter Season with a bang by fielding 22 games over the weekend...', link: '/news?article=league-opening-weekend-2017' }
         ],
+
         satGameResults: [
           {
-            id: 1, gameDate: '2017-10-14', gameTime: '8:00 AM', gameDay: 'Saturday', division: 'Open Division II-A', homeTeam: 'Big Ballers', homeTeamScore: 103, homeTeamWin: true, awayTeam: 'Leduc Warriors', awayTeamScore: 98, awayTeamWin: false, isGameDone: true, gymShortName: 'Troy', gameNotes: 'Player of the Game: Rich Guce with 34 pts.'
+            id: 1, gameDate: '2017-10-14', gameTime: '8:00 AM', gameDay: 'Saturday', division: 'Open Division II-A', homeTeam: 'Big Ballers', homeTeamScore: 103, homeTeamWin: true, awayTeam: 'Leduc Warriors', awayTeamScore: 98, awayTeamWin: false, isGameDone: true, gymShortName: 'Troy', gameNotes: 'Player of the Game: Raf Guce with 34 pts.'
           },
           {
             id: 2, gameDate: '2017-10-14', gameTime: '9:20 AM', gameDay: 'Saturday', division: 'Open Division II-B', homeTeam: 'Hotshots', homeTeamScore: 61, homeTeamWin: false, awayTeam: 'Changes For Hope', awayTeamScore: 104, awayTeamWin: true, isGameDone: false, gymShortName: 'Troy', gameNotes: 'Mikee Canasa paced Changes for Hope with 24 pts.'
@@ -296,70 +388,406 @@
             id: 8, gameDate: '2017-10-14', gameTime: '5:20 PM', gameDay: 'Saturday', division: 'Open Division II-B', homeTeam: 'Batangas Pride', homeTeamScore: 63, homeTeamWin: false, awayTeam: 'Team Rolly', awayTeamScore: 68, awayTeamWin: true, isGameDone: false, gymShortName: 'Troy', gameNotes: 'Player #7 of Team Rolly with 29 points.'
           }
         ],
+
+        sunGameResults1: [
+          {
+            id: 9, gameDate: '2017-10-15', gameTime: '8:00 AM', gameDay: 'Sunday', division: 'Master Division B', homeTeam: 'Pinoy Auto Loans', homeTeamScore: 82, homeTeamWin: true, awayTeam: 'Millwoods Warriors', awayTeamScore: 79, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero', gameNotes: 'Bembot Musa lead Pinoy Auto Loans with 24 pts.'
+          },
+          {
+            id: 10, gameDate: '2017-10-15', gameTime: '9:20 AM', gameDay: 'Sunday', division: 'Master Division A', homeTeam: 'Crosstown Auto', homeTeamScore: 76, homeTeamWin: false, awayTeam: 'Luzviminda', awayTeamScore: 77, awayTeamWin: true, isGameDone: false, gymShortName: 'Romero', gameNotes: 'J. Roguel scored 20 pts.'
+          },
+          {
+            id: 11, gameDate: '2017-10-15', gameTime: '10:40 AM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Edmonton Eagles', homeTeamScore: 68, homeTeamWin: false, awayTeam: 'H & B', awayTeamScore: 74, awayTeamWin: true, isGameDone: false, gymShortName: 'Romero', gameNotes: 'Floyd Eyao topscored for the H & B with 31 pts.'
+          },
+          {
+            id: 12, gameDate: '2017-10-15', gameTime: '12:00 PM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'La Derma', homeTeamScore: 67, homeTeamWin: true, awayTeam: 'Bolero', awayTeamScore: 62, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero', gameNotes: 'Alvin Corpuz lead a balanced attack for La Derma with 12 pts.'
+          },
+          {
+            id: 13, gameDate: '2017-10-15', gameTime: '1:20 PM', gameDay: 'Sunday', division: 'Open Division II-B', homeTeam: 'Barako Boba Island', homeTeamScore: 67, homeTeamWin: true, awayTeam: 'Hanjan', awayTeamScore: 63, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero', gameNotes: 'Jayson Castillo topscored for Boba Island with 17 pts.'
+          },
+          {
+            id: 14, gameDate: '2017-10-15', gameTime: '2:40 PM', gameDay: 'Sunday', division: 'Open Division II-B', homeTeam: 'Cancom', homeTeamScore: 69, homeTeamWin: true, awayTeam: 'Industrial Athlete', awayTeamScore: 65, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero', gameNotes: 'Ron Montealegre lead Cancom with 19 pts.'
+          },
+          {
+            id: 15, gameDate: '2017-10-15', gameTime: '4:00 PM', gameDay: 'Sunday', division: 'Master Division A', homeTeam: 'H & B Master', homeTeamScore: 89, homeTeamWin: true, awayTeam: 'Team Manash', awayTeamScore: 82, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero', gameNotes: 'OT win for H&B lead by #9\'s 25 pts.'
+          }
+        ],
+
+        sunGameResults2: [
+          {
+            id: 15, gameDate: '2017-10-15', gameTime: '8:00 AM', gameDay: 'Sunday', division: 'Master Division B', homeTeam: 'Team Pahirapan', homeTeamScore: 79, homeTeamWin: false, awayTeam: 'CLG Display', awayTeamScore: 80, awayTeamWin: true, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Jeff Dalit of CLG Display pumped 24 pts in tight match'
+          },
+          {
+            id: 16, gameDate: '2017-10-15', gameTime: '9:20 AM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'PSA Free Agents', homeTeamScore: 55, homeTeamWin: false, awayTeam: 'Cameron Homes', awayTeamScore: 123, awayTeamWin: true, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Cameron Heights blow-out win was lead by Ivan Balala\'s 21 pts.'
+          },
+          {
+            id: 17, gameDate: '2017-10-15', gameTime: '10:40 AM', gameDay: 'Sunday', division: 'Master Division A', homeTeam: 'Prestige Vision', homeTeamScore: 75, homeTeamWin: true, awayTeam: 'Golden Bucks', awayTeamScore: 62, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Joe Simon paced Prestige Vision with 23 pts.'
+          },
+          {
+            id: 18, gameDate: '2017-10-15', gameTime: '12:00 PM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'Phenoms', homeTeamScore: 55, homeTeamWin: false, awayTeam: 'Team Morinville', awayTeamScore: 86, awayTeamWin: true, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Player #21 from Team Morinville scored 21 pts.'
+          },
+          {
+            id: 19, gameDate: '2017-10-15', gameTime: '1:20 PM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Amirax Terror Squad', homeTeamScore: 86, homeTeamWin: true, awayTeam: 'Full Force', awayTeamScore: 65, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Dondon Tagufa lead Amirax with 24 pts.'
+          },
+          {
+            id: 20, gameDate: '2017-10-15', gameTime: '2:40 PM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Akatsuki', homeTeamScore: 67, homeTeamWin: false, awayTeam: 'Alberta Medical Supplies', awayTeamScore: 77, awayTeamWin: true, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Samson King lead Alberta Medical Supplies (Genesis) with 19 pts.'
+          },
+          {
+            id: 21, gameDate: '2017-10-15', gameTime: '4:00 PM', gameDay: 'Sunday', division: 'Open Division I', homeTeam: 'Knights', homeTeamScore: 90, homeTeamWin: true, awayTeam: 'Crooks', awayTeamScore: 71, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity', gameNotes: 'Virson Orquez lead Knights with 31 pts.'
+          }
+        ],
+
         upcomingSatGames: [
           {
-            id: 1, gameDate: '2017-10-14', gameTime: '8:00 AM', gameDay: 'Saturday', division: 'Open Division II-A', homeTeam: 'Big Ballers', homeTeamScore: 103, homeTeamWin: true, awayTeam: 'Leduc Warriors', awayTeamScore: 98, awayTeamWin: false, isGameDone: true, gymShortName: 'Troy', gameNotes: 'Player of the Game: Rich Guce with 34 pts.'
+            id: 1,
+            gameDate: '2017-10-21',
+            gameTime: '8:00 AM',
+            gameDay: 'Saturday',
+            division: 'Master Div A',
+            homeTeam: 'Luzviminda',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'First Canadian',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 2, gameDate: '2017-10-14', gameTime: '9:20 AM', gameDay: 'Saturday', division: 'Open Division II-B', homeTeam: 'Hotshots', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Changes For Hope', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 2,
+            gameDate: '2017-10-21',
+            gameTime: '9:20 AM',
+            gameDay: 'Saturday',
+            division: 'Open Division II-C',
+            homeTeam: 'Spectrum G-Dios',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Bolero',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 3, gameDate: '2017-10-14', gameTime: '10:40 AM', gameDay: 'Saturday', division: 'Master Division B', homeTeam: 'AMDG', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Gallery Dental', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 3,
+            gameDate: '2017-10-21',
+            gameTime: '10:40 AM',
+            gameDay: 'Saturday',
+            division: 'Master Div B',
+            homeTeam: 'SBP',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'AMDG',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 4, gameDate: '2017-10-14', gameTime: '12:00 PM', gameDay: 'Saturday', division: 'Open Division II-C', homeTeam: 'Huskies', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Spectrum G-Dios', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 4,
+            gameDate: '2017-10-21',
+            gameTime: '12:00 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division II-A',
+            homeTeam: 'Edmonton Eagles',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Eswar',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 5, gameDate: '2017-10-14', gameTime: '1:20 PM', gameDay: 'Saturday', division: 'Master Division B', homeTeam: 'SBP', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Barako', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 5,
+            gameDate: '2017-10-21',
+            gameTime: '1:20 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division II-A',
+            homeTeam: 'H & B Open',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Leduc Warriors',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 6, gameDate: '2017-10-14', gameTime: '2:40 PM', gameDay: 'Saturday', division: 'Open Division II-A', homeTeam: 'Eswar', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Akatsuki', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 7,
+            gameDate: '2017-10-21',
+            gameTime: '2:40 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division II-B',
+            homeTeam: 'Changes for Hope',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Industrial Athlete',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 7, gameDate: '2017-10-14', gameTime: '4:00 PM', gameDay: 'Saturday', division: 'Master Division A', homeTeam: 'First Canadian', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Amirax Wolverines', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 8,
+            gameDate: '2017-10-21',
+            gameTime: '4:00 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division I',
+            homeTeam: 'Pinoy Auto Loans',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Crooks',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           },
           {
-            id: 8, gameDate: '2017-10-14', gameTime: '5:20 PM', gameDay: 'Saturday', division: 'Open Division II-B', homeTeam: 'Batangas Pride', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Team Rolly', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Troy'
+            id: 9,
+            gameDate: '2017-10-21',
+            gameTime: '5:20 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division I',
+            homeTeam: 'PSA',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Knights',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
+          },
+          {
+            id: 10,
+            gameDate: '2017-10-21',
+            gameTime: '6:40 PM',
+            gameDay: 'Saturday',
+            division: 'Open Division II-B',
+            homeTeam: 'Batangas Pride',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Hanjan',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Troy',
+            gameNotes: ''
           }
         ],
+
         upcomingSunGames1: [
           {
-            id: 9, gameDate: '2017-10-15', gameTime: '8:00 AM', gameDay: 'Sunday', division: 'Master Division B', homeTeam: 'Pinoy Auto Loans', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Millwoods Warriors', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 11,
+            gameDate: '2017-10-22',
+            gameTime: '8:00 AM',
+            gameDay: 'Sunday',
+            division: 'Master Division B',
+            homeTeam: 'Pinoy Auto Loans',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'CLG Display',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           },
           {
-            id: 10, gameDate: '2017-10-15', gameTime: '9:20 AM', gameDay: 'Sunday', division: 'Master Division A', homeTeam: 'Crosstown Auto', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Luzviminda', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 12,
+            gameDate: '2017-10-22',
+            gameTime: '9:20 AM',
+            gameDay: 'Sunday',
+            division: 'Master Division A',
+            homeTeam: 'Crosstown Auto',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Amirax Wolverines',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           },
           {
-            id: 11, gameDate: '2017-10-15', gameTime: '10:40 AM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Edmonton Eagles', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'H & B', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 13,
+            gameDate: '2017-10-22',
+            gameTime: '10:40 AM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-A',
+            homeTeam: 'Edmonton Eagles',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Full Force',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           },
           {
-            id: 12, gameDate: '2017-10-15', gameTime: '12:00 PM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'Stellar Wealth', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Bolero', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 14,
+            gameDate: '2017-10-22',
+            gameTime: '12:00 PM',
+            gameDay: 'Sunday',
+            division: 'Master Division A',
+            homeTeam: 'Golden Bucks',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'H & B Master',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           },
           {
-            id: 13, gameDate: '2017-10-15', gameTime: '1:20 PM', gameDay: 'Sunday', division: 'Open Division II-B', homeTeam: 'Barako Boba Island', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Hanjan', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 15,
+            gameDate: '2017-10-22',
+            gameTime: '1:20 PM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-B',
+            homeTeam: 'Team Rolly',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Cancom',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           },
           {
-            id: 14, gameDate: '2017-10-15', gameTime: '2:40 PM', gameDay: 'Sunday', division: 'Open Division II-B', homeTeam: 'Cancom', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Industrial Athlete', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Romero'
+            id: 16,
+            gameDate: '2017-10-22',
+            gameTime: '2:40 PM',
+            gameDay: 'Sunday',
+            division: 'Master Division B',
+            homeTeam: 'Team Pahirapan',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Gallery Dental',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
+          },
+          {
+            id: 17,
+            gameDate: '2017-10-22',
+            gameTime: '4:00 PM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-A',
+            homeTeam: 'Big Baller',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Akatsuki',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Romero',
+            gameNotes: ''
           }
         ],
+
         upcomingSunGames2: [
           {
-            id: 15, gameDate: '2017-10-15', gameTime: '8:00 AM', gameDay: 'Sunday', division: 'Master Division B', homeTeam: 'Team Pahirapan', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'CLG Display', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 18,
+            gameDate: '2017-10-22',
+            gameTime: '8:00 AM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-C',
+            homeTeam: 'Huskies',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'PSA Free Agents',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           },
           {
-            id: 16, gameDate: '2017-10-15', gameTime: '9:20 AM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'PSA Free Agents', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Cameron Homes', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 19,
+            gameDate: '2017-10-22',
+            gameTime: '9:20 AM',
+            gameDay: 'Sunday',
+            division: 'Master Division B',
+            homeTeam: 'Millwoods Warriors',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Barako',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           },
           {
-            id: 17, gameDate: '2017-10-15', gameTime: '10:40 AM', gameDay: 'Sunday', division: 'Master Division A', homeTeam: 'Prestige Vision', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Golden Bucks', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 20,
+            gameDate: '2017-10-22',
+            gameTime: '10:40 AM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-C',
+            homeTeam: 'Cameron Homes',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Team Morinville',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           },
           {
-            id: 18, gameDate: '2017-10-15', gameTime: '12:00 PM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'Phenoms', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Team Morinville', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 21,
+            gameDate: '2017-10-22',
+            gameTime: '12:00 PM',
+            gameDay: 'Sunday',
+            division: 'Master Division A',
+            homeTeam: 'Team Manash',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Prestige Vision',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           },
           {
-            id: 19, gameDate: '2017-10-15', gameTime: '1:20 PM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Amirax Terror Squad', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Full Force', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 22,
+            gameDate: '2017-10-22',
+            gameTime: '1:20 PM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-B',
+            homeTeam: 'Barako Boba Island',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Hotshots',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           },
           {
-            id: 20, gameDate: '2017-10-15', gameTime: '2:40 PM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Akatsuki', homeTeamScore: 0, homeTeamWin: false, awayTeam: 'Genesis', awayTeamScore: 0, awayTeamWin: false, isGameDone: false, gymShortName: 'Trinity'
+            id: 23,
+            gameDate: '2017-10-22',
+            gameTime: '2:40 PM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-C',
+            homeTeam: 'Phenoms',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'La Derma',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
+          },
+          {
+            id: 24,
+            gameDate: '2017-10-22',
+            gameTime: '4:00 PM',
+            gameDay: 'Sunday',
+            division: 'Open Division II-A',
+            homeTeam: 'Amirax Terror Squad',
+            homeTeamScore: null,
+            homeTeamWin: false,
+            awayTeam: 'Alberta Medical Supplies',
+            awayTeamScore: null,
+            awayTeamWin: false,
+            gymShortName: 'Trinity',
+            gameNotes: ''
           }
         ]
       }

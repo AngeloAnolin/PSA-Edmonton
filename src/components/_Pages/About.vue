@@ -79,12 +79,12 @@
       return {
         officials: [
           { name: 'Gary Perpetua', position: 'President', image: 'gary.jpg', phone: '###-###-####' },
-          { name: 'Celso \'Jun\' Antonio', position: 'Vice-President (Internal)', image: 'man.png', phone: '###-###-####' },
+          { name: 'Celso \'Jun\' Antonio', position: 'Vice-President (Internal)', image: 'jun.jpg', phone: '###-###-####' },
           { name: 'Jovencio Datu', position: 'Vice-President (External)', image: 'joven.jpg', phone: '###-###-####' },
-          { name: 'Ariel Nealega', position: 'Secretary', image: 'man.png', phone: '###-###-####' },
+          { name: 'Ariel Nealega', position: 'Secretary and Director', image: 'ariel.jpg', phone: '###-###-####' },
           { name: 'Beth Datu', position: 'Treasurer', image: 'woman.png', phone: '###-###-####' },
-          { name: 'Charmaine Keillor', position: 'Co-Treasurer', image: 'charmaine.jpg', phone: '###-###-####' },
-          { name: 'Helary Perpetua', position: 'Co-Treasurer', image: 'helary.jpg', phone: '###-###-####' },
+          { name: 'Charmaine Keillor', position: 'Co-Secretary / Co-Treasurer', image: 'charmaine.jpg', phone: '###-###-####' },
+          { name: 'Helary Perpetua', position: 'Co-Secretary / Co-Treasurer', image: 'helary.jpg', phone: '###-###-####' },
           { name: 'Andy Mar \'Floyd\' Eyao', position: 'Public Relations Officer', image: 'floyd.jpg', phone: '###-###-####' },
           { name: 'Joe Simon', position: 'Public Relations Officer', image: 'man.png', phone: '###-###-####' },
           { name: 'Yros Astorga', position: 'Public Relations Officer', image: 'yros.jpg', phone: '###-###-####' },

@@ -8,7 +8,7 @@
 
       <div class="col-md-12 visible-md visible-lg" v-for="brck in brackets" :key="brck.BracketId">
         <br />
-        <div class="container">
+        <div class="container-fluid">
           <app-table :title="brck.BracketName" :data="brck.Teams" :columns="columnDefs">
           </app-table>
         </div>
@@ -53,7 +53,7 @@
           {
             columnName: 'TeamName',
             columnTitle: 'Name',
-            columnWidth: '35%'
+            columnWidth: '30%'
           },
           {
             columnName: 'Win',
@@ -71,9 +71,14 @@
             columnWidth: '10%'
           },
           {
+            columnName: 'PlusMinus',
+            columnTitle: '(+ / -)',
+            columnWidth: '10%'
+          },
+          {
             columnName: 'TeamLeader',
             columnTitle: 'Team Leader',
-            columnWidth: '25%'
+            columnWidth: '20%'
           }
         ]
       }
@@ -91,7 +96,7 @@
 
         axios.get(url).then((response) => {
           a.brackets = response.data
-          console.log(a.brackets)
+          // console.log(a.brackets)
           a.isLoading = false
         }, (err) => {
           console.log(err)
