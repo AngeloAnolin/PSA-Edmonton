@@ -29,6 +29,11 @@ const SidebarStore = {
       path: '/schedules'
     },
     {
+      name: 'Results',
+      icon: 'fa fa-list-ol',
+      path: '/results'
+    },
+    {
       name: 'Gallery',
       icon: 'fa fa-camera-retro',
       path: '/gallery'

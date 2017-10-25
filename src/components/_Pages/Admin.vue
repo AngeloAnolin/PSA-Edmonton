@@ -26,7 +26,7 @@
         <h4>{{dataTitle}} <i v-if="isLoading" class="fa fa-refresh fa-spin fa-fw"></i></h4>
         
         <div class="container-fluid" v-if="gamesFiltered.length > 0">
-          <app-table :data="gamesFiltered" :columns="columnDefs" @editButtonClick="editClicked">
+          <app-table :data="gamesFiltered" :showEditButton="true" :columns="columnDefs" @editButtonClick="editClicked">
           </app-table>
         </div>
       </div>

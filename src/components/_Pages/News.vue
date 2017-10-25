@@ -1,6 +1,59 @@
 <template>
   <div>
     <div class="row">
+      <!-- Plaer of The Week 1 -->
+      <div class="container" id="player-of-the-week-2">
+        <h2>Player of the Week (Oct 21&22, 2017)</h2>
+        <p class="news-post-meta">October 24, 2017 by Angelo</p>
+        <p>
+          Virson Orquez put up a master class performance over the weekend leading Knights to their second straight win of the season against PSA selection last Saturday.
+        </p>
+        <p>
+          PSA Selection put up a valiant effort to cut the lead multiple times in the fourth quarter, but Orquez's hot shooting capped by his 41 points kept the game
+          in favor of the Knights.
+        </p>
+        <p>
+          Orquez made his shot from all places on the court as he was virtually unstoppable in leading the Knights to the win.
+        </p>
+      </div>
+
+      <!-- Week 3 Game Posted -->
+      <div class="container" id="week-3-games">
+        <h2>Week 3 Game Schedules Posted  (For Oct 28 & 29, 2017)</h2>
+        <p class="news-post-meta">October 24, 2017 by Angelo</p>
+        <p>
+          Games for the upcoming weekend, October 28 & 29 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          A total of 22 games are scheduled to be played across different school gym locations in the city.
+        </p>
+        <p>
+          Looking forward to seeing you all there.
+        </p>
+      </div>
+
+      <!-- Week 2 Game Results -->
+      <div class="container" id="week-2-games-results">
+        <h2>Week 2 Game Results Posted  (Oct 21 & 22, 2017 Games)</h2>
+        <p class="news-post-meta">October 24, 2017 by Angelo</p>
+        <p>
+          Game results for the 2nd weekend period of October 21 & 22 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/results">Results</a> page to view the latest and all games played results.
+        </p>
+        <p>
+          Latest team standings will also be updated and can be seen on the <a href="/#/teams">Teams</a> listing page.
+        </p>
+        <p>
+          Again, PSA-Edmonton would like to thank all players, sponsors and their families and friends who continue to provide 
+          support to make the league successful.
+        </p>
+      </div>
+
       <!-- Week 2 Game Posted -->
       <div class="container" id="week-2-games">
         <h2>Week 2 Games Posted  (For Oct 21 & 22, 2017)</h2>
@@ -30,6 +83,7 @@
           This is the highest scoring output performed by a player this season, earning Yola the honors of being named Player of the Week.
         </p>
       </div>
+
       <!-- Successful League Start -->
       <div class="container" id="league-opening-weekend-2017">
         <h2>Successful League Opening Weekend</h2>

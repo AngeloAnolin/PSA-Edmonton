@@ -9,6 +9,7 @@ import News from 'components/_Pages/News.vue'
 import Teams from 'components/_Pages/Teams.vue'
 import Sponsors from 'components/_Pages/Sponsors.vue'
 import Schedules from 'components/_Pages/Schedules.vue'
+import Results from 'components/_Pages/Results.vue'
 import Gallery from 'components/_Pages/Gallery.vue'
 import About from 'components/_Pages/About.vue'
 import Admin from 'components/_Pages/Admin.vue'
@@ -55,6 +56,11 @@ const routes = [
         path: 'schedules',
         name: 'schedules',
         component: Schedules
+      },
+      {
+        path: 'results',
+        name: 'results',
+        component: Results
       },
       {
         path: 'gallery',

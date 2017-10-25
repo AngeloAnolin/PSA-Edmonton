@@ -37,7 +37,7 @@
         <h4>Interested in Sponsoring?</h4>
         <p>
           Sponsorship opens a lot of opportunities for your business to be identified and patronized in the 
-          Filipino community. Come see us and we will discuss sponsorship options for that would yield the 
+          Filipino community. Come see us and we will discuss sponsorship options that would yield the 
           best return for your business.
         </p>
         <br />

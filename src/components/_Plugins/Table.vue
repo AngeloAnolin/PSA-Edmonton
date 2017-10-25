@@ -9,12 +9,12 @@
     <div class="content table-responsive table-full-width">
       <table class="table tableMargin" :class="tableClass">
         <thead>
-          <th v-if="true" width="5%">Action</th>
+          <th v-if="showEditButton" width="5%">Action</th>
           <th v-for="c in columns" :key="c.columnName" :width="c.columnWidth">{{ c.columnTitle }}</th>
         </thead>
         <tbody>
           <tr v-for="item in data" :key="item.id">
-            <td>
+            <td v-if="showEditButton">
               <button type="button" class="btn btn-info" @click="editButtonClicked(item)">Edit</button>
             </td>
             <td v-for="c in columns" v-if="hasValue(item, c.columnName)" :key="c.columnName">{{itemValue(item, c.columnName)}}</td>
@@ -27,7 +27,10 @@
 <script>
   export default {
     props: {
-      showEditButton: Boolean,
+      showEditButton: {
+        type: Boolean,
+        default: false
+      },
       columns: Array,
       data: Array,
       type: {
