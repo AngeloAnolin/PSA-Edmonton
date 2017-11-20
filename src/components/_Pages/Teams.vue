@@ -53,17 +53,17 @@
           {
             columnName: 'TeamName',
             columnTitle: 'Name',
-            columnWidth: '30%'
+            columnWidth: '20%'
           },
           {
             columnName: 'Win',
             columnTitle: 'Win',
-            columnWidth: '15%'
+            columnWidth: '10%'
           },
           {
             columnName: 'Loss',
             columnTitle: 'Loss',
-            columnWidth: '15%'
+            columnWidth: '10%'
           },
           {
             columnName: 'Percentage',
@@ -71,14 +71,24 @@
             columnWidth: '10%'
           },
           {
-            columnName: 'PlusMinus',
-            columnTitle: '(+ / -)',
+            columnName: 'PointsScored',
+            columnTitle: 'Pts Scored',
             columnWidth: '10%'
           },
           {
-            columnName: 'TeamLeader',
-            columnTitle: 'Team Leader',
-            columnWidth: '20%'
+            columnName: 'PointsAllowed',
+            columnTitle: 'Pts Allowed',
+            columnWidth: '10%'
+          },
+          {
+            columnName: 'PointDiff',
+            columnTitle: 'Pts Diff',
+            columnWidth: '10%'
+          },
+          {
+            columnName: 'MeanScore',
+            columnTitle: 'Mean Score',
+            columnWidth: '10%'
           }
         ]
       }

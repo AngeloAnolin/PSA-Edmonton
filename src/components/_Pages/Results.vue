@@ -8,50 +8,83 @@
           Note: Game results are posted as soon as they are available.
         </p>
 
-        <!-- <div class="row">
-          <div class="col-md-3 col-sm-12">
-            <label for="sel1">Game Date</label>
-            <select class="form-control selectBordered"
-              size="large"
-              placeholder="Select Game Date"
-              v-model="selectedGameDate">
-              <option v-for="gd in gameDates"
-                :value="gd.gameDate"
-                :label="gd.gameDate"
-                :key="gd.gameDate">
-              </option>
-            </select>
-          </div>
+        <!-- October 29, 2017 @ Trinity [START] -->
+        <div class="col-md-12 visible-md visible-lg" 
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 22, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Holy Trinity Gym')">
+          <app-table :title="r20171029b.title" :sub-title="r20171029b.subTitle" :data="r20171029b.data" :columns="r20171029b.columns">
+          </app-table>
+        </div>
 
-          <div class="col-md-3 col-sm-12">
-            <label for="sel1">Gym</label>
-            <select class="form-control selectBordered"
-              size="large"
-              placeholder="Select Gym Location"
-              v-model="selectedGymLocation">
-              <option v-for="gl in gymLocations"
-                :value="gl.gymName"
-                :label="gl.gymName"
-                :key="gl.gymName">
-              </option>
-            </select>
+        <div class="list-group visible-sm visible-xs"
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 22, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Holy Trinity Gym')">
+          <h4>{{ r20171029b.title }}</h4>
+          <h5>{{ r20171029b.subTitle }}</h5>
+          <div v-for="a in r20171029b.data" :key="a.id" class="list-group-item">
+            <p class="list-group-item-text">
+              <strong>{{ a.division}}</strong>
+            </p>
+            <h5 class="list-group-item-heading">
+              {{ a.homeTeam }} - {{ a.homeTeamScore }} 
+              <br />
+              <small>vs</small> 
+              <br />
+              {{ a.awayTeam }} - {{ a.awayTeamScore }}
+            </h5>
           </div>
+        </div>
+        <!-- October 29, 2017 @ Trinity [END] -->
 
-          <div class="col-md-3 col-sm-12">
-            <label for="sel1">Bracket</label>
-            <select class="form-control selectBordered"
-              size="large"
-              placeholder="Select Gym Location"
-              v-model="selectedBracket" 
-              @change="bracketChanged">
-              <option v-for="tb in teamBrackets"
-                :value="tb.bracketName"
-                :label="tb.bracketName"
-                :key="tb.bracketName">
-              </option>
-            </select>
+        <!-- October 22, 2017 @ Romero [START] -->
+        <div class="col-md-12 visible-md visible-lg" 
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 29, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Oscar Romero Gym')">
+          <app-table :title="r20171029a.title" :sub-title="r20171029a.subTitle" :data="r20171029a.data" :columns="r20171029a.columns">
+          </app-table>
+        </div>
+
+        <div class="list-group visible-sm visible-xs"
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 22, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Oscar Romero Gym')">
+          <h4>{{ r20171029a.title }}</h4>
+          <h5>{{ r20171029a.subTitle }}</h5>
+          <div v-for="a in r20171029a.data" :key="a.id" class="list-group-item">
+            <p class="list-group-item-text">
+              <strong>{{ a.division}}</strong>
+            </p>
+            <h5 class="list-group-item-heading">
+              {{ a.homeTeam }} - {{ a.homeTeamScore }} 
+              <br />
+              <small>vs</small> 
+              <br />
+              {{ a.awayTeam }} - {{ a.awayTeamScore }}
+            </h5>
           </div>
-        </div> -->
+        </div>
+        <!-- October 22, 2017 @ Romero [END] -->
+
+        <!-- October 28, 2017 @ Troy [START] -->
+        <div class="col-md-12 visible-md visible-lg" 
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 28, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Father Troy Gym')">
+          <app-table :title="r20171028.title" :sub-title="r20171028.subTitle" :data="r20171028.data" :columns="r20171028.columns">
+          </app-table>
+        </div>
+
+        <div class="list-group visible-sm visible-xs"
+             v-if="(selectedGameDate === 'Show All' || selectedGameDate == 'October 15, 2017') && (selectedGymLocation === 'Show All' || selectedGymLocation === 'Oscar Romero Gym')">
+          <h4>{{ r20171028.title }}</h4>
+          <h5>{{ r20171028.subTitle }}</h5>
+          <div v-for="a in r20171028.data" :key="a.id" class="list-group-item">
+            <p class="list-group-item-text">
+              <strong>{{ a.division}}</strong>
+            </p>
+            <h5 class="list-group-item-heading">
+              {{ a.homeTeam }} - {{ a.homeTeamScore }} 
+              <br />
+              <small>vs</small> 
+              <br />
+              {{ a.awayTeam }} - {{ a.awayTeamScore }}
+            </h5>
+          </div>
+        </div>
+        <!-- October 28, 2017 @ Troy [END] -->
 
         <!-- October 22, 2017 @ Trinity [START] -->
         <div class="col-md-12 visible-md visible-lg" 
@@ -234,7 +267,9 @@
           { gameDate: 'October 14, 2017' },
           { gameDate: 'October 15, 2017' },
           { gameDate: 'October 21, 2017' },
-          { gameDate: 'October 22, 2017' }
+          { gameDate: 'October 22, 2017' },
+          { gameDate: 'October 28, 2017' },
+          { gameDate: 'October 29, 2017' }
         ],
 
         gymLocations: [
@@ -260,6 +295,9 @@
         r20171021: null,
         r20171022a: null,
         r20171022b: null,
+        r20171028: null,
+        r20171029a: null,
+        r20171029b: null,
 
         results20171014: {
           title: 'October 14, 2017',
@@ -462,6 +500,384 @@
             { id: 23, gameDate: '2017-10-22', gameTime: '2:40 PM', gameDay: 'Sunday', division: 'Open Division II-C', homeTeam: 'Phenoms', homeTeamScore: 71, homeTeamWin: false, awayTeam: 'La Derma', awayTeamScore: 85, awayTeamWin: true, gymShortName: 'Trinity', gameNotes: 'M. Nidoy scored 15 pts for La Derma' },
             { id: 24, gameDate: '2017-10-22', gameTime: '4:00 PM', gameDay: 'Sunday', division: 'Open Division II-A', homeTeam: 'Amirax Terror Squad', homeTeamScore: 108, homeTeamWin: true, awayTeam: 'Alberta Medical Supplies', awayTeamScore: 85, awayTeamWin: false, gymShortName: 'Trinity', gameNotes: 'Itliong lead Amirax with 21 pts.' }
           ]
+        },
+
+        results20171028: {
+          title: 'October 28, 2017',
+          subTitle: '@Holy Trinity Gym',
+          columns: [
+            { columnName: 'gameTime', columnTitle: 'Time', columnWidth: '8%' },
+            { columnName: 'division', columnTitle: 'Division', columnWidth: '12%' },
+            { columnName: 'homeTeam', columnTitle: 'Home Team', columnWidth: '12%' },
+            { columnName: 'homeTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'awayTeam', columnTitle: 'Away Team', columnWidth: '12%' },
+            { columnName: 'awayTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'gameNotes', columnTitle: 'Game Notes', columnWidth: '40%' }
+          ],
+          data: [
+            {
+              id: 1,
+              gameDate: '2017-10-28',
+              gameTime: '8:00 AM',
+              gameDay: 'Saturday',
+              division: 'Open Division II-C',
+              homeTeam: 'La Derma',
+              homeTeamScore: 87,
+              homeTeamWin: true,
+              awayTeam: 'Spectrum G-Dios',
+              awayTeamScore: 62,
+              awayTeamWin: false,
+              gymShortName: 'Troy',
+              gameNotes: 'M. Nidoy of La Derma poured in 35 pts.'
+            },
+            {
+              id: 2,
+              gameDate: '2017-10-28',
+              gameTime: '9:20 AM',
+              gameDay: 'Saturday',
+              division: 'Master Division B',
+              homeTeam: 'SBP',
+              homeTeamScore: 69,
+              homeTeamWin: false,
+              awayTeam: 'Millwoods Warriors',
+              awayTeamScore: 101,
+              awayTeamWin: true,
+              gymShortName: 'Troy',
+              gameNotes: 'J. Aguilon of Millwoods Warriors lead with 23 pts.'
+            },
+            {
+              id: 3,
+              gameDate: '2017-10-28',
+              gameTime: '10:40 AM',
+              gameDay: 'Saturday',
+              division: 'Open Division I',
+              homeTeam: 'Pinoy Auto Loans',
+              homeTeamScore: 108,
+              homeTeamWin: true,
+              awayTeam: 'PSA',
+              awayTeamScore: 84,
+              awayTeamWin: false,
+              gymShortName: 'Troy',
+              gameNotes: 'AJ Mapa had 26 pts in the blowout win.'
+            },
+            {
+              id: 4,
+              gameDate: '2017-10-28',
+              gameTime: '12:00 PM',
+              gameDay: 'Saturday',
+              division: 'Open Division II-B',
+              homeTeam: 'Hanjan',
+              homeTeamScore: 102,
+              homeTeamWin: true,
+              awayTeam: 'Industrial Athlete',
+              awayTeamScore: 99,
+              awayTeamWin: false,
+              gymShortName: 'Troy',
+              gameNotes: 'Gerome Mejia paced Hanjan w/24 pts in the OT thriller.'
+            },
+            {
+              id: 5,
+              gameDate: '2017-10-28',
+              gameTime: '1:20 PM',
+              gameDay: 'Saturday',
+              division: 'Master Division A',
+              homeTeam: 'First Canadian',
+              homeTeamScore: 79,
+              homeTeamWin: false,
+              awayTeam: 'Golden Bucks',
+              awayTeamScore: 102,
+              awayTeamWin: true,
+              gymShortName: 'Troy',
+              gameNotes: 'Piodo lead Golden Bucks with 30 pts.'
+            },
+            {
+              id: 7,
+              gameDate: '2017-10-28',
+              gameTime: '2:40 PM',
+              gameDay: 'Saturday',
+              division: 'Open Division II-B',
+              homeTeam: 'Batangas Pride',
+              homeTeamScore: 66,
+              homeTeamWin: true,
+              awayTeam: 'Cancom',
+              awayTeamScore: 64,
+              awayTeamWin: false,
+              gymShortName: 'Troy',
+              gameNotes: 'J. Magdaong of Batangas Pride scored 22 pts in a close game.'
+            },
+            {
+              id: 8,
+              gameDate: '2017-10-28',
+              gameTime: '4:00 PM',
+              gameDay: 'Saturday',
+              division: 'Master Division B',
+              homeTeam: 'AMDG',
+              homeTeamScore: 83,
+              homeTeamWin: true,
+              awayTeam: 'CLG Display',
+              awayTeamScore: 78,
+              awayTeamWin: false,
+              gymShortName: 'Troy',
+              gameNotes: 'A. Vitale poured 19 pts for AMDG'
+            },
+            {
+              id: 9,
+              gameDate: '2017-10-28',
+              gameTime: '5:20 PM',
+              gameDay: 'Saturday',
+              division: 'Open Division II-A',
+              homeTeam: 'Alberta Medical Supplies',
+              homeTeamScore: 83,
+              homeTeamWin: false,
+              awayTeam: 'Eswar',
+              awayTeamScore: 88,
+              awayTeamWin: true,
+              gymShortName: 'Troy',
+              gameNotes: 'D. Villamor had 42 pts (w/6 3-pointers) for the Eswar win.'
+            }
+          ]
+        },
+
+        results20171029a: {
+          title: 'October 29, 2017',
+          subTitle: '@Oscar Romero Gym',
+          columns: [
+            { columnName: 'gameTime', columnTitle: 'Time', columnWidth: '8%' },
+            { columnName: 'division', columnTitle: 'Division', columnWidth: '12%' },
+            { columnName: 'homeTeam', columnTitle: 'Home Team', columnWidth: '12%' },
+            { columnName: 'homeTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'awayTeam', columnTitle: 'Away Team', columnWidth: '12%' },
+            { columnName: 'awayTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'gameNotes', columnTitle: 'Game Notes', columnWidth: '40%' }
+          ],
+          data: [
+            {
+              id: 11,
+              gameDate: '2017-10-29',
+              gameTime: '8:00 AM',
+              gameDay: 'Sunday',
+              division: 'Master Division B',
+              homeTeam: 'Pinoy Auto Loans',
+              homeTeamScore: 75,
+              homeTeamWin: true,
+              awayTeam: 'Gallery Dental',
+              awayTeamScore: 72,
+              awayTeamWin: false,
+              gymShortName: 'Romero',
+              gameNotes: 'Joe Medina lead a balance Crosstown attack with 15 pts.'
+            },
+            {
+              id: 12,
+              gameDate: '2017-10-29',
+              gameTime: '9:20 AM',
+              gameDay: 'Sunday',
+              division: 'Master Division A',
+              homeTeam: 'Crosstown Auto',
+              homeTeamScore: 71,
+              homeTeamWin: false,
+              awayTeam: 'Prestige Vision',
+              awayTeamScore: 91,
+              awayTeamWin: true,
+              gymShortName: 'Romero',
+              gameNotes: 'J. Simon had 9-3 pointers leading with 29 pts. for Prestige Vision'
+            },
+            {
+              id: 13,
+              gameDate: '2017-10-29',
+              gameTime: '10:40 AM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-A',
+              homeTeam: 'Edmonton Eagles',
+              homeTeamScore: 87,
+              homeTeamWin: false,
+              awayTeam: 'Leduc Warriors',
+              awayTeamScore: 89,
+              awayTeamWin: true,
+              gymShortName: 'Romero',
+              gameNotes: 'I. Gonzales scored 35 pts on 8 3-pt shots for the Leduc Warriors win.'
+            },
+            {
+              id: 14,
+              gameDate: '2017-10-29',
+              gameTime: '12:00 PM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-A',
+              homeTeam: 'H & B Open',
+              homeTeamScore: 102,
+              homeTeamWin: true,
+              awayTeam: 'Alberta Medical Supplies',
+              awayTeamScore: 100,
+              awayTeamWin: false,
+              gymShortName: 'Romero',
+              gameNotes: 'F. Eyao had 29 pts in a tight win for H&B Open'
+            },
+            {
+              id: 15,
+              gameDate: '2017-10-29',
+              gameTime: '1:20 PM',
+              gameDay: 'Sunday',
+              division: 'Master Division A',
+              homeTeam: 'H & B Master',
+              homeTeamScore: 69,
+              homeTeamWin: true,
+              awayTeam: 'Luzviminda',
+              awayTeamScore: 62,
+              awayTeamWin: false,
+              gymShortName: 'Romero',
+              gameNotes: 'E. Luis of H&B Master had 29 pts for the win.'
+            },
+            {
+              id: 16,
+              gameDate: '2017-10-29',
+              gameTime: '2:40 PM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-B',
+              homeTeam: 'Team Rolly',
+              homeTeamScore: 65,
+              homeTeamWin: false,
+              awayTeam: 'Hotshots',
+              awayTeamScore: 81,
+              awayTeamWin: true,
+              gymShortName: 'Romero',
+              gameNotes: 'Bakks lead Hotshots with 24 pts.'
+            },
+            {
+              id: 17,
+              gameDate: '2017-10-29',
+              gameTime: '4:00 PM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-C',
+              homeTeam: 'Bolero',
+              homeTeamScore: 78,
+              homeTeamWin: true,
+              awayTeam: 'Phenoms',
+              awayTeamScore: 67,
+              awayTeamWin: false,
+              gymShortName: 'Romero',
+              gameNotes: 'Lopez paced Bolero for the win with 24 pts.'
+            }
+          ]
+        },
+
+        results20171029b: {
+          title: 'October 29, 2017',
+          subTitle: '@Holy Trinity Gym',
+          columns: [
+            { columnName: 'gameTime', columnTitle: 'Time', columnWidth: '8%' },
+            { columnName: 'division', columnTitle: 'Division', columnWidth: '12%' },
+            { columnName: 'homeTeam', columnTitle: 'Home Team', columnWidth: '12%' },
+            { columnName: 'homeTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'awayTeam', columnTitle: 'Away Team', columnWidth: '12%' },
+            { columnName: 'awayTeamScore', columnTitle: 'Score', columnWidth: '8%' },
+            { columnName: 'gameNotes', columnTitle: 'Game Notes', columnWidth: '40%' }
+          ],
+          data: [
+            {
+              id: 18,
+              gameDate: '2017-10-29',
+              gameTime: '8:00 AM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-C',
+              homeTeam: 'Huskies',
+              homeTeamScore: 68,
+              homeTeamWin: false,
+              awayTeam: 'Cameron Homes',
+              awayTeamScore: 125,
+              awayTeamWin: true,
+              gymShortName: 'Trinity',
+              gameNotes: 'J. Giron lead Cameron Homes with 30 pts.'
+            },
+            {
+              id: 19,
+              gameDate: '2017-10-29',
+              gameTime: '9:20 AM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-A',
+              homeTeam: 'Big Baller',
+              homeTeamScore: 79,
+              homeTeamWin: false,
+              awayTeam: 'Full Force',
+              awayTeamScore: 84,
+              awayTeamWin: true,
+              gymShortName: 'Trinity',
+              gameNotes: 'Canlas paced Full Force with 27 pts.'
+            },
+            {
+              id: 20,
+              gameDate: '2017-10-29',
+              gameTime: '10:40 AM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-C',
+              homeTeam: 'PSA Free Agents',
+              homeTeamScore: 87,
+              homeTeamWin: false,
+              awayTeam: 'Team Morinville',
+              awayTeamScore: 106,
+              awayTeamWin: true,
+              gymShortName: 'Trinity',
+              gameNotes: 'De Jesus topscored for Morinville with 36 pts.'
+            },
+            {
+              id: 21,
+              gameDate: '2017-10-29',
+              gameTime: '12:00 PM',
+              gameDay: 'Sunday',
+              division: 'Master Division B',
+              homeTeam: 'Barako',
+              homeTeamScore: 84,
+              homeTeamWin: true,
+              awayTeam: 'Team Pahirapan',
+              awayTeamScore: 67,
+              awayTeamWin: false,
+              gymShortName: 'Trinity',
+              gameNotes: 'H. Fernandez lead Barako with 19 pts.'
+            },
+            {
+              id: 22,
+              gameDate: '2017-10-29',
+              gameTime: '1:20 PM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-B',
+              homeTeam: 'Changes for Hope',
+              homeTeamScore: 80,
+              homeTeamWin: true,
+              awayTeam: 'Barako Boba Island',
+              awayTeamScore: 78,
+              awayTeamWin: false,
+              gymShortName: 'Trinity',
+              gameNotes: 'B. Leyte poured in 19 pts in the Changes for Hope win.'
+            },
+            {
+              id: 23,
+              gameDate: '2017-10-29',
+              gameTime: '2:40 PM',
+              gameDay: 'Sunday',
+              division: 'Master Division A',
+              homeTeam: 'Amirax Wolverines',
+              homeTeamScore: 78,
+              homeTeamWin: true,
+              awayTeam: 'Team Manash',
+              awayTeamScore: 71,
+              awayTeamWin: false,
+              gymShortName: 'Trinity',
+              gameNotes: 'MJ Daquioag lead Amirax with 12 points.'
+            },
+            {
+              id: 24,
+              gameDate: '2017-10-29',
+              gameTime: '4:00 PM',
+              gameDay: 'Sunday',
+              division: 'Open Division II-A',
+              homeTeam: 'Amirax Terror Squad',
+              homeTeamScore: 96,
+              homeTeamWin: true,
+              awayTeam: 'Akatsuki',
+              awayTeamScore: 75,
+              awayTeamWin: false,
+              gymShortName: 'Trinity',
+              gameNotes: 'D. Rodriquez lead a balanced attack for Amirax with 16 pts.'
+            }
+          ]
         }
       }
     },
@@ -475,6 +891,9 @@
         a.r20171021 = JSON.parse(JSON.stringify(a.results20171021))
         a.r20171022a = JSON.parse(JSON.stringify(a.results20171022a))
         a.r20171022b = JSON.parse(JSON.stringify(a.results20171022b))
+        a.r20171028 = JSON.parse(JSON.stringify(a.results20171028))
+        a.r20171029a = JSON.parse(JSON.stringify(a.results20171029a))
+        a.r20171029b = JSON.parse(JSON.stringify(a.results20171029b))
 
         if (a.selectedBracket === 'Show All') {
           // Do Nothing as the data is being reset to show all.
@@ -491,8 +910,6 @@
             return el.division === a.selectedBracket
           })
         }
-
-        console.log(a.r20171015a)
       }
     },
 
@@ -504,6 +921,9 @@
       a.r20171021 = JSON.parse(JSON.stringify(a.results20171021))
       a.r20171022a = JSON.parse(JSON.stringify(a.results20171022a))
       a.r20171022b = JSON.parse(JSON.stringify(a.results20171022b))
+      a.r20171028 = JSON.parse(JSON.stringify(a.results20171028))
+      a.r20171029a = JSON.parse(JSON.stringify(a.results20171029a))
+      a.r20171029b = JSON.parse(JSON.stringify(a.results20171029b))
     },
 
     mounted: function () {

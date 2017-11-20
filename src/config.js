@@ -5,15 +5,6 @@ let apiUrl = () => {
   return ''
 }
 
-let teamApiUrl = () => {
-  var w = window.location.href
-  if (w.indexOf('localhost') >= 0) {
-    return baseUrl + ''
-  } else {
-    return serverUrl
-  }
-}
-
 let bracketApiUrl = () => {
   var w = window.location.href
   if (w.indexOf('localhost') >= 0) {
@@ -41,10 +32,29 @@ let gameApiUrl = () => {
   }
 }
 
+let gymApiUrl = () => {
+  var w = window.location.href
+  if (w.indexOf('localhost') >= 0) {
+    return baseUrl + 'api/v1/gym'
+  } else {
+    return serverUrl + 'api/v1/gym'
+  }
+}
+
+let teamApiUrl = () => {
+  var w = window.location.href
+  if (w.indexOf('localhost') >= 0) {
+    return baseUrl + 'api/v1/team'
+  } else {
+    return serverUrl + 'api/v1/team'
+  }
+}
+
 export default {
   apiUrl,
-  teamApiUrl,
   bracketApiUrl,
   gameDateApiUrl,
-  gameApiUrl
+  gameApiUrl,
+  gymApiUrl,
+  teamApiUrl
 }

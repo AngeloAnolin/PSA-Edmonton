@@ -1,7 +1,64 @@
 <template>
   <div>
     <div class="row">
-      <!-- Plaer of The Week 1 -->
+      <!-- Week 4 Game Posted -->
+      <div class="container" id="week-4-games">
+        <h2>Week 4 Game Schedules Posted  (For Nov 4 & 5, 2017)</h2>
+        <p class="news-post-meta">November 01, 2017 by Angelo</p>
+        <p>
+          Games for the upcoming weekend, November 4 & 5 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          A total of 23 games are scheduled to be played across different school gym locations in the city.
+        </p>
+        <p>
+          As the teams are getting into their full strength after the long summer break, expect to see more quality and close games ahead.
+        </p>
+      </div>
+
+       <!-- Player of The Week 3 -->
+      <div class="container" id="player-of-the-week-2">
+        <h2>Player of the Week (Oct 28&29, 2017)</h2>
+        <p class="news-post-meta">November 01, 2017 by Angelo</p>
+        <p>
+          Deoel Villamor of Team Eswar in the Open Division II-A bracket provided spectacular shooting display en route to a win by his team against Alberta Health Supplies.
+        </p>
+        <p>
+          Alberta Health Supplies tried to keep the game close but was not able to sustain the onslaught of Villamor's hot shooting scoring a total of 42 points with 6 threes made to
+          put the game away.
+        </p>
+        <p>
+          Villamor was virtually unstoppable as all defenders tasked in covering his spots have been rendered helpless to his sweet stroke on the court.
+        </p>
+        <p>
+          Other games also featured high scoring output from individual players, but for the recently concluded weekend games, Deoel Villamor deserves top honors to be named 
+          player of the week.
+        </p>
+      </div>
+
+      <!-- Week 3 Game Results -->
+      <div class="container" id="week-3-games-results">
+        <h2>Week 3 Game Results Posted  (Oct 28 & 29, 2017 Games)</h2>
+        <p class="news-post-meta">November 01, 2017 by Angelo</p>
+        <p>
+          Game results for the PSA-Edmonton 3rd weekend period of October 28 & 29 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/results">Results</a> page to view the latest as well as results of each and every game played.
+        </p>
+        <p>
+          Latest team standings will also be updated and can be seen on the <a href="/#/teams">Teams</a> listing page.
+        </p>
+        <p>
+          Again, PSA-Edmonton would like to thank all players, sponsors and their families and friends who continue to provide 
+          support to make the league successful.
+        </p>
+      </div>
+
+      <!-- Player of The Week 2 -->
       <div class="container" id="player-of-the-week-2">
         <h2>Player of the Week (Oct 21&22, 2017)</h2>
         <p class="news-post-meta">October 24, 2017 by Angelo</p>
