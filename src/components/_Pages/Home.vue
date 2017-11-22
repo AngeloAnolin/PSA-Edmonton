@@ -97,6 +97,8 @@
         <div class="container-fluid">
           <h3>
             Upcoming Games
+            &nbsp;
+            <i class="fa fa-spinner fa-spin fa-fw" v-if="dataLoading"></i>
           </h3>
           <p>
             Games schedule this coming weekend
@@ -244,7 +246,7 @@
             Latest Results
           </h3>
           <p>
-            Results of Most Recent Games. Click <a href="#/results">here</a> to view all other game results.
+            Results of Most Recent Games including other previous games can be viewed in the <a href="#/results">RESULTS</a> page.
           </p>
 
           <!--
@@ -386,6 +388,7 @@
   export default {
     data () {
       return {
+        dataLoading: false,
         divSlide1: 'slide-1',
         divSlide2: 'slide-2',
         divSlide3: 'slide-3',
@@ -595,6 +598,7 @@
 
       getApiUrl () {
         var a = this
+        a.dataLoading = true
         a.gameApiUrl = config.gameApiUrl()
         a.gameDateApiUrl = config.gameDateApiUrl()
         a.bracketApiUrl = config.bracketApiUrl()
@@ -615,6 +619,7 @@
         var a = this
         axios.get(a.gameApiUrl + '/upcominggames').then((response) => {
           a.upcomingGames = response.data
+          a.dataLoading = false
         }, (err) => {
           console.log(err)
         })
