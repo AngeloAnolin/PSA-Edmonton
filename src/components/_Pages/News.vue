@@ -1,8 +1,106 @@
 <template>
   <div>
     <div class="row">
+      <!-- Spring Summer Season -->
+      <div class="container" id="psa-spring-summer-2018">
+        <h2>PSA Ushers to 2018 Spring / Summer League Season</h2>
+        <p class="news-post-meta">February 28, 2018 by Angelo</p>
+        <p>
+          After the long winter break where players and teams have rested and ready to play, PSA starts the 2018 season with a more than 50 teams participating.
+        </p>
+        <p>
+          Inaugural games for the 2018 , a total of 10 games are to be held at Father Michael Troy Gym this Saturday, March 3, 2018.
+        </p>
+        <p>
+          The season continues with 16 more games to be held at Trinity Gym and Oscar Romero gyms.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          Participating teams are encouraged to check this page or head to the official Facebook page for details on the upcoming league.
+        </p>
+        <p>
+          Special thanks goes to Crosstown again for sponsoring the upper jerseys to be used by participating teams this season.
+        </p>
+      </div>
+
+      <!-- Week 7 Game Posted -->
+      <div class="container" id="week-4-games" v-if="false">
+        <h2>Week 7 Game Schedules Posted  (For Nov 25 & 26, 2017)</h2>
+        <p class="news-post-meta">November 22, 2017 by Angelo</p>
+        <p>
+          Games for the upcoming weekend, November 25 & 26 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          A total of 23 games are scheduled to be played across different school gym locations in the city.
+        </p>
+        <p>
+          Games are getting more exciting as each team is trying to scramble to get to the next rounds of quarterfinals. Top two (2) teams
+          in each division (exclusing Dvision 1) would be waiting in the semifinals, where they would face the winners of the quarterfinal rounds.
+        </p>
+      </div>
+      
+      <!-- Week 7 Game Posted -->
+      <div class="container" id="week-4-games" v-if="false">
+        <h2>Week 7 Game Schedules Posted  (For Nov 25 & 26, 2017)</h2>
+        <p class="news-post-meta">November 22, 2017 by Angelo</p>
+        <p>
+          Games for the upcoming weekend, November 25 & 26 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/schedules">Schedules</a> page to view the latest upcoming games.
+        </p>
+        <p>
+          A total of 23 games are scheduled to be played across different school gym locations in the city.
+        </p>
+        <p>
+          Games are getting more exciting as each team is trying to scramble to get to the next rounds of quarterfinals. Top two (2) teams
+          in each division (exclusing Dvision 1) would be waiting in the semifinals, where they would face the winners of the quarterfinal rounds.
+        </p>
+      </div>
+
+      <!-- Player of The Week 6 -->
+      <div class="container" id="player-of-the-week-6" v-if="false">
+        <h2>Player of the Week (Nov 18&19, 2017)</h2>
+        <p class="news-post-meta">November 22, 2017 by Angelo</p>
+        <p>
+          Jasprit Sanghera of Edmonton Eagles in the Open Division II-A bracket provided relentless hustle and sharp shooting display to cap a 36 point performance
+          for the win against the Bigger Baller Brand.
+        </p>
+        <p>
+          With the smaller lineup paraded by Bigger Baller Brand, there was simply no stopping Jasprit from scoring at will inside the paint. The game was kept close 
+          in the opening periods but the consistent display of skills by Jasprit proved too much for Bigger Baller to handle.
+        </p>
+        <p>
+          The impressive performance by Jasprit earned him Player of the Week honors for the sixth week of the PSA-Edmonton basketball league.
+        </p>
+      </div>
+
+      <!-- Week 6 Game Results -->
+      <div class="container" id="week-6-games-results" v-if="false">
+        <h2>Week 6 Game Results Posted  (Nov 18 & 19, 2017 Games)</h2>
+        <p class="news-post-meta">November 22, 2017 by Angelo</p>
+        <p>
+          Game results for the PSA-Edmonton 6th weekend period covering games held on November 18 & 19 have been posted.
+        </p>
+        <p>
+          Please proceed to the <a href="/#/results">Results</a> page to view the latest as well as results of each and every game played.
+        </p>
+        <p>
+          Latest team standings have also been updated and currently reflects as of the latest games. This can be seen on the <a href="/#/teams">Teams</a> listing page.
+        </p>
+        <p>
+          Again, PSA-Edmonton would like to thank all players, sponsors and their families and friends who continue to provide 
+          support to make the league successful.
+        </p>
+      </div>
+
       <!-- Week 4 Game Posted -->
-      <div class="container" id="week-4-games">
+      <div class="container" id="week-4-games" v-if="false">
         <h2>Week 4 Game Schedules Posted  (For Nov 4 & 5, 2017)</h2>
         <p class="news-post-meta">November 01, 2017 by Angelo</p>
         <p>
@@ -20,7 +118,7 @@
       </div>
 
        <!-- Player of The Week 3 -->
-      <div class="container" id="player-of-the-week-2">
+      <div class="container" id="player-of-the-week-2" v-if="false">
         <h2>Player of the Week (Oct 28&29, 2017)</h2>
         <p class="news-post-meta">November 01, 2017 by Angelo</p>
         <p>
@@ -40,7 +138,7 @@
       </div>
 
       <!-- Week 3 Game Results -->
-      <div class="container" id="week-3-games-results">
+      <div class="container" id="week-3-games-results" v-if="false">
         <h2>Week 3 Game Results Posted  (Oct 28 & 29, 2017 Games)</h2>
         <p class="news-post-meta">November 01, 2017 by Angelo</p>
         <p>
@@ -59,7 +157,7 @@
       </div>
 
       <!-- Player of The Week 2 -->
-      <div class="container" id="player-of-the-week-2">
+      <div class="container" id="player-of-the-week-2" v-if="false">
         <h2>Player of the Week (Oct 21&22, 2017)</h2>
         <p class="news-post-meta">October 24, 2017 by Angelo</p>
         <p>
@@ -75,7 +173,7 @@
       </div>
 
       <!-- Week 3 Game Posted -->
-      <div class="container" id="week-3-games">
+      <div class="container" id="week-3-games" v-if="false">
         <h2>Week 3 Game Schedules Posted  (For Oct 28 & 29, 2017)</h2>
         <p class="news-post-meta">October 24, 2017 by Angelo</p>
         <p>
@@ -93,7 +191,7 @@
       </div>
 
       <!-- Week 2 Game Results -->
-      <div class="container" id="week-2-games-results">
+      <div class="container" id="week-2-games-results" v-if="false">
         <h2>Week 2 Game Results Posted  (Oct 21 & 22, 2017 Games)</h2>
         <p class="news-post-meta">October 24, 2017 by Angelo</p>
         <p>
@@ -112,7 +210,7 @@
       </div>
 
       <!-- Week 2 Game Posted -->
-      <div class="container" id="week-2-games">
+      <div class="container" id="week-2-games" v-if="false">
         <h2>Week 2 Games Posted  (For Oct 21 & 22, 2017)</h2>
         <p class="news-post-meta">October 17, 2017 by Angelo</p>
         <p>
@@ -130,7 +228,7 @@
       </div>
 
       <!-- Plaer of The Week 1 -->
-      <div class="container" id="player-of-the-week-1">
+      <div class="container" id="player-of-the-week-1" v-if="false">
         <h2>Player of the Week (Oct 14&15, 2017)</h2>
         <p class="news-post-meta">October 16, 2017 by Angelo</p>
         <p>
@@ -142,7 +240,7 @@
       </div>
 
       <!-- Successful League Start -->
-      <div class="container" id="league-opening-weekend-2017">
+      <div class="container" id="league-opening-weekend-2017" v-if="false">
         <h2>Successful League Opening Weekend</h2>
         <p class="news-post-meta">October 16, 2017 by Angelo</p>
         <p>
@@ -166,7 +264,7 @@
       </div>
 
       <!-- League Opening -->
-      <div class="container" id="fall-winter-2017-start">
+      <div class="container" id="fall-winter-2017-start" v-if="false">
         <h2>PSA Fall / Winter 2017 Season Starts</h2>
         <p class="news-post-meta">October 13, 2017 by Angelo</p>
         <p>
@@ -188,7 +286,7 @@
       </div>
 
       <!-- Open Gym -->
-      <div class="container" id="open-gym-oct-8">
+      <div class="container" id="open-gym-oct-8" v-if="false">
         <h2>Open Gym - October 8, 2017</h2>
         <p class="news-post-meta">October 5, 2017 by Angelo</p>
         <p>
@@ -211,7 +309,7 @@
       </div>
 
       <!-- Open Gym -->
-      <div class="container" id="open-gym-oct-1">
+      <div class="container" id="open-gym-oct-1" v-if="false">
         <h2>Open Gym - October 1, 2017</h2>
         <p class="news-post-meta">September 29, 2017 by Angelo</p>
         <p>
@@ -229,7 +327,7 @@
       </div>
 
       <!-- Facebook Page -->
-      <div class="container" id="official-facebook">
+      <div class="container" id="official-facebook" v-if="false">
         <h2>Official Facebook Page</h2>
         <p class="news-post-meta">September 26, 2017 by Angelo</p>
         <p>
@@ -259,7 +357,7 @@
       </div>
       
       <!-- New PSA Officials -->
-      <div class="container" id="new-psa-officials">
+      <div class="container" id="new-psa-officials" v-if="false">
         <h2>New PSA Officials</h2>
         <p class="news-post-meta">August 1, 2017 by Angelo</p>
         <p>

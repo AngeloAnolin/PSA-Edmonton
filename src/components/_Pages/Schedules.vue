@@ -581,7 +581,7 @@
 
       getUpcomingGameDates () {
         var a = this
-        axios.get(a.gameDateApiUrl + '/upcominggamedates').then((response) => {
+        axios.get(a.gameDateApiUrl + '/allupcominggamedates').then((response) => {
           a.upcomingGameDates = response.data
         }, (err) => {
           console.log(err)
@@ -590,7 +590,7 @@
 
       getUpcomingGames () {
         var a = this
-        axios.get(a.gameApiUrl + '/upcominggames').then((response) => {
+        axios.get(a.gameApiUrl + '/allupcominggames').then((response) => {
           a.upcomingGames = response.data
         }, (err) => {
           console.log(err)

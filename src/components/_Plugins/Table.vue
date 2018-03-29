@@ -11,6 +11,8 @@
         <thead>
           <th v-if="showEditButton" width="5%">Action</th>
           <th v-for="c in columns" :key="c.columnName" :width="c.columnWidth">{{ c.columnTitle }}</th>
+          <th v-if="showSemis" width="5%">In Semis</th>
+          <th v-if="showWildcard" width="5%">Wildcard</th>
         </thead>
         <tbody>
           <tr v-for="item in data" :key="item.id">
@@ -18,6 +20,12 @@
               <button type="button" class="btn btn-info" @click="editButtonClicked(item)">Edit</button>
             </td>
             <td v-for="c in columns" v-if="hasValue(item, c.columnName)" :key="c.columnName">{{itemValue(item, c.columnName)}}</td>
+            <td v-if="showSemis">
+              <i class="fa fa-check-circle-o" aria-hidden="true" v-if="item.ClinchedSemis"></i>
+            </td>
+            <td v-if="showWildcard">
+              <i class="fa fa-check-circle-o" aria-hidden="true" v-if="item.ClinchedWildcard"></i>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -28,6 +36,14 @@
   export default {
     props: {
       showEditButton: {
+        type: Boolean,
+        default: false
+      },
+      showSemis: {
+        type: Boolean,
+        default: false
+      },
+      showWildcard: {
         type: Boolean,
         default: false
       },

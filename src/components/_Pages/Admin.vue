@@ -9,8 +9,11 @@
       </div>
       </div>
       <div class="col-sm-2">
-        <button type="button" class="btn btn-fill btn-success btn-block" @click="refreshScreenClicked">
+        <!--<button type="button" class="btn btn-fill btn-success btn-block" @click="refreshScreenClicked">
           <i v-if="isLoading" class="fa fa-refresh fa-spin fa-fw"></i> Refresh 
+        </button>-->
+        <button type="button" class="btn btn-fill btn-info btn-block" @click="tabulateClicked">
+          <i v-if="isLoading" class="fa fa-refresh fa-spin fa-fw"></i> Tabulate 
         </button>
       </div>
     </div>
@@ -27,7 +30,7 @@
           <button type="button" class="list-group-item text-center" 
                   :class="{ active: selectedGameDateId === gd.GameDateId }" 
                   v-for="gd in gameDates" :key="gd.GameDateId" @click="gameDateClicked(gd)">
-            {{ gd.ScheduleDate | dateFormatter }}
+            {{ convertDateStringToWord(gd.ScheduleDate.substring(0,10)) }}
           </button>
         </div>
       </div>
@@ -157,7 +160,7 @@
 
       <div class="col-md-10 col-sm-8">
         <h4>{{ teamPanelTitle }} &nbsp; 
-          <button class="btn btn-primary btn-fill btn-sm" title="Click to add a new Team..." @click="addTeamClicked" v-if="(selectedTeam === null && teamPanelBracketSelected && !showTeamForm)">
+          <button class="btn btn-primary btn-fill btn-sm" title="Click to add a new Team..." @click="addTeamClicked" v-if="(teamPanelBracketSelected && !showTeamForm)">
             Add
           </button>
         </h4>
@@ -245,6 +248,20 @@
                   onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                   v-model="selectedTeam.MeanScore">
                 </fg-input>
+            </div>
+
+            <div class="col-sm-3">
+              <h4>Clinched Semis?</h4>
+              <input type="checkbox"
+                v-model="selectedTeam.ClinchedSemis">
+              </input>
+            </div>
+
+            <div class="col-sm-3">
+              <h4>Clinched Wildcard?</h4>
+              <input type="checkbox"
+                v-model="selectedTeam.ClinchedWildcard">
+              </input>
             </div>
           </div>
         </div>
@@ -458,6 +475,8 @@
           PointDiff: null,
           MeanScore: null,
           Percentage: null,
+          ClinchedSemis: false,
+          ClinchedWildcard: false,
           BracketId: null
         }
       }
@@ -666,6 +685,21 @@
         }
       },
 
+      tabulateClicked () {
+        var a = this
+        a.isLoading = true
+        var url = a.gameApiUrl + '/tabulate'
+        axios.post(url, null).then((response) => {
+          var msg = 'Team Standings been successfully updated.'
+          a.notifyVue('top', 'right', msg, 'success', 'fa fa-check-circle')
+          a.isLoading = false
+        }, (err) => {
+          console.log(err)
+          var msg = 'An error has been encountered while tabulating team records. Check console for more information.'
+          a.notifyVue('top', 'right', msg, 'danger', 'fa fa-exclamation-circle')
+        })
+      },
+
       getGameDates () {
         var a = this
 
@@ -720,6 +754,7 @@
         var a = this
         a.showTeamForm = true
         a.teamPanelTitle = 'Add Team'
+        a.selectedTeam.BracketId = a.teamPanelBracketId
       },
 
       editTeamClicked (obj) {
@@ -742,7 +777,7 @@
 
       saveTeamClick () {
         var a = this
-        if (a.selectedTeam) {
+        if (a.selectedTeam.TeamId) {
           // Update
           a.selectedTeam.PointsScored = (a.selectedTeam.PointsScored === null) ? 0 : a.selectedTeam.PointsScored
           a.selectedTeam.PointsAllowed = (a.selectedTeam.PointsAllowed === null) ? 0 : a.selectedTeam.PointsAllowed
@@ -759,7 +794,23 @@
           })
         } else {
           // Add
-          console.log('To be implemented soon...')
+          var addUrl = a.teamApiUrl + '/create'
+          axios.post(addUrl, a.selectedTeam).then((response) => {
+            var msg = 'Team has been successfully added.'
+            a.notifyVue('top', 'right', msg, 'success', 'fa fa-check-circle')
+
+            // After adding the team, ensure that the team is added to the bracket.
+            a.brackets.forEach(function (element) {
+              if (element.BracketId === a.teamPanelBracketId) {
+                element.Teams.splice(1, 0, response.data)
+              }
+            })
+            console.log(response.data)
+          }, (err) => {
+            console.log(err)
+            var msg = 'An error has been encountered while adding the team. Check console for more information.'
+            a.notifyVue('top', 'right', msg, 'danger', 'fa fa-exclamation-circle')
+          })
         }
 
         a.selectedTeam = {}
@@ -783,6 +834,16 @@
         localStorage.removeItem('psa-api-key')
         a.apiKeySet = false
         a.apiKey = null
+      },
+
+      convertDateStringToWord (datestring) {
+        var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        var d = new Date(datestring)
+        var dayName = days[d.getDay()]
+
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        var tempDate = datestring.split('-')
+        return dayName + ', ' + tempDate[2] + ' ' + months[Number(tempDate[1]) - 1] + ' ' + tempDate[0]
       }
     },
 

@@ -9,7 +9,7 @@
       <div class="col-md-12 visible-md visible-lg" v-for="brck in brackets" :key="brck.BracketId">
         <br />
         <div class="container-fluid">
-          <app-table :title="brck.BracketName" :data="brck.Teams" :columns="columnDefs">
+          <app-table :title="brck.BracketName" :data="brck.Teams" :columns="columnDefs" :showSemis="true" :showWildcard="true">
           </app-table>
         </div>
       </div>
@@ -18,10 +18,13 @@
         <h3>{{ brck.BracketName }}</h3>
         <div v-for="t in brck.Teams" :key="t.TeamId" class="list-group-item">
           <h4 class="list-group-item-heading">
-            {{ t.TeamName }}
+            {{ t.TeamName }} ({{ t.Win }} - {{ t.Loss }})
           </h4>
           <p class="list-group-item-text">
-            Win: {{ t.Win }} | Loss: {{ t.Loss }} | Pct. {{ t.Percentage }}
+            Pts Diff: {{ t.PointDiff }} | Pct (%): {{ t.Percentage }}
+          </p>
+          <p class="list-group-item-text">
+            In Semis: <i class="fa fa-check-circle-o" aria-hidden="true" v-if="t.ClinchedSemis"></i> | Wildcard: <i class="fa fa-check-circle-o" aria-hidden="true" v-if="t.ClinchedWildcard"></i>
           </p>
           <p class="list-group-item-text">
             Team Leader: {{ t.TeamLeader }}
