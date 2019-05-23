@@ -522,7 +522,9 @@
         })
 
         if (bracketObject) {
-          a.teams = bracketObject[0].Teams
+          var tms = bracketObject[0].Teams
+          // a.teams = bracketObject[0].Teams
+          a.teams = tms.sort(a.sortTeams)
         }
       },
 
@@ -844,6 +846,18 @@
         var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         var tempDate = datestring.split('-')
         return dayName + ', ' + tempDate[2] + ' ' + months[Number(tempDate[1]) - 1] + ' ' + tempDate[0]
+      },
+
+      sortTeams (a, b) {
+        if (a.TeamName < b.TeamName) {
+          return -1
+        }
+
+        if (a.TeamName > b.TeamName) {
+          return 1
+        }
+
+        return 0
       }
     },
 

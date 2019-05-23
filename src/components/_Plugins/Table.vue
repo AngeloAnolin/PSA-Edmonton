@@ -10,6 +10,7 @@
       <table class="table tableMargin" :class="tableClass">
         <thead>
           <th v-if="showEditButton" width="5%">Action</th>
+          <th v-if="showDetailButton" width="3%"></th>
           <th v-for="c in columns" :key="c.columnName" :width="c.columnWidth">{{ c.columnTitle }}</th>
           <th v-if="showSemis" width="5%">In Semis</th>
           <th v-if="showWildcard" width="5%">Wildcard</th>
@@ -18,6 +19,11 @@
           <tr v-for="item in data" :key="item.id">
             <td v-if="showEditButton">
               <button type="button" class="btn btn-info" @click="editButtonClicked(item)">Edit</button>
+            </td>
+            <td v-if="showDetailButton">
+              <button type="button" class="btn btn-info btn-xs" @click="detailButtonClicked(item)" :title="detailButtonText">
+                <i class="fa fa-commenting" aria-hidden="true"></i>
+              </button>
             </td>
             <td v-for="c in columns" v-if="hasValue(item, c.columnName)" :key="c.columnName">{{itemValue(item, c.columnName)}}</td>
             <td v-if="showSemis">
@@ -38,6 +44,14 @@
       showEditButton: {
         type: Boolean,
         default: false
+      },
+      showDetailButton: {
+        type: Boolean,
+        default: false
+      },
+      detailButtonText: {
+        type: String,
+        default: ''
       },
       showSemis: {
         type: Boolean,
@@ -113,6 +127,10 @@
 
       editButtonClicked (obj) {
         this.$emit('editButtonClick', obj)
+      },
+
+      detailButtonClicked (obj) {
+        this.$emit('detailButtonClick', obj)
       }
     }
   }

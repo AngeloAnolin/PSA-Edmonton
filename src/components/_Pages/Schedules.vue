@@ -52,7 +52,7 @@
           <app-table :title="sunSchedule2.title" :sub-title="sunSchedule2.subTitle" :data="sunSchedule2.data" :columns="sunSchedule2.columns">
           </app-table>
         </div>
-        -->
+        
 
         <div class="list-group visible-sm visible-xs">
           <h4>{{ satSchedule.title }}</h4>
@@ -101,6 +101,7 @@
             </p>
           </div>
         </div>
+        -->
 
         <div class="col-md-12" v-if="satSchedule.data.length < 1">
           <div class="alert alert-warning">

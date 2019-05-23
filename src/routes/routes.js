@@ -7,6 +7,7 @@ import Layout from '../components/_Layout/Layout.vue'
 import Home from 'components/_Pages/Home.vue'
 import News from 'components/_Pages/News.vue'
 import Teams from 'components/_Pages/Teams.vue'
+import TeamDetails from 'components/_Pages/TeamDetails.vue'
 import Sponsors from 'components/_Pages/Sponsors.vue'
 import Schedules from 'components/_Pages/Schedules.vue'
 import Results from 'components/_Pages/Results.vue'
@@ -46,6 +47,11 @@ const routes = [
         path: 'teams',
         name: 'teams',
         component: Teams
+      },
+      {
+        path: 'teamdetails',
+        name: 'Team Details',
+        component: TeamDetails
       },
       {
         path: 'sponsors',

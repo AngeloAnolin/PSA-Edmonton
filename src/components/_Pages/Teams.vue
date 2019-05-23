@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div class="row">
     <div class="container-fluid">
       <p>
@@ -9,7 +9,8 @@
       <div class="col-md-12 visible-md visible-lg" v-for="brck in brackets" :key="brck.BracketId">
         <br />
         <div class="container-fluid">
-          <app-table :title="brck.BracketName" :data="brck.Teams" :columns="columnDefs" :showSemis="true" :showWildcard="true">
+          <app-table :title="brck.BracketName" :data="brck.Teams" :columns="columnDefs" :showSemis="true" :showWildcard="true" 
+            :showDetailButton="true" detailButtonText="Show Games Played" @detailButtonClick="showGamesPlayed">
           </app-table>
         </div>
       </div>
@@ -114,6 +115,11 @@
         }, (err) => {
           console.log(err)
         })
+      },
+
+      showGamesPlayed (obj) {
+        var a = this
+        a.$router.push({path: 'teamdetails', query: { id: obj.TeamId }})
       }
     },
 
